@@ -174,6 +174,94 @@
         </fieldset>
 
         <fieldset>
+            <legend>Which continent are you living in right now?</legend>
+            <div>
+                <input id="asia" name="cont" type="radio" value="Asia">
+                <label for="asia">Asia</label>                
+            </div>
+            <div>
+                <input id="africa" name="cont" type="radio" value="Africa">
+                <label for="africa">Africa</label>                
+            </div>
+            <div>
+                <input id="europe" name="cont" type="radio" value="Europe">
+                <label for="europe">Europe</label>                
+            </div>
+            <div>
+                <input id="nAmerica" name="cont" type="radio" value="NorthAmerica">
+                <label for="nAmerica">North America</label>                
+            </div>
+            <div>
+                <input id="sAmerica" name="cont" type="radio" value="SouthAmerica">
+                <label for="sAmerica">South America</label>                
+            </div>
+            <div>
+                <input id="oceania" name="cont" type="radio" value="Oceania">
+                <label for="oceania">Oceania</label>                
+            </div>
+            <div>
+                <input id="antarc" name="cont" type="radio" value="Antarctica">
+                <label for="antarc">Antarctica</label>                
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>What government system is your country under?</legend>
+            <div>
+                <input id="pres" name="gov" type="radio" value="PresidentalRepublic">
+                <label for="pres">Presidental Republic</label>                
+            </div>
+            <div>
+                <input id="spres" name="gov" type="radio" value="SemiPresidentalRepublic">
+                <label for="spres">Semi-presidental Republic</label>                
+            </div>
+            <div>
+                <input id="opstate" name="gov" type="radio" value="OnePartyState">
+                <label for="opstate">One-party State</label>                
+            </div>
+            <div>
+                <input id="parl" name="gov" type="radio" value="ParliamentaryRepublic">
+                <label for="parl">Parliamentary Republic</label>                
+            </div>
+            <div>
+                <input id="cmon" name="gov" type="radio" value="Constitutional Monarchy">
+                <label for="cmon">Constitutional Monarchy</label>                
+            </div>
+            <div>
+                <input id="scmon" name="gov" type="radio" value="Semi-constitutional Monarchy">
+                <label for="scmon">Semi-constitutional Monarchy</label>                
+            </div>
+            <div>
+                <input id="amon" name="gov" type="radio" value="AbsoluteMonarchy">
+                <label for="amon">Absolute Monarchy</label>                
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Do you view your own country favorably?</legend>
+            <div>
+                <input id="yview" name="view" type="radio" value="yes">
+                <label for="yview">Yes</label>                
+            </div>
+            <div>
+                <input id="nview" name="view" type="radio" value="no">
+                <label for="nview">No</label>                
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Do you think your country should strive to be economically developed?</legend>
+            <div>
+                <input id="ystrive" name="strive" type="radio" value="yes">
+                <label for="ystrive">Yes</label>                
+            </div>
+            <div>
+                <input id="nstrive" name="strive" type="radio" value="no">
+                <label for="nstrive">No</label>                
+            </div>
+        </fieldset>
+
+        <fieldset>
             <legend>Let us know your opinions</legend>
             <div>
                 <label for="life">Can you share about the current life condition of citizens from your nation?</label>
@@ -184,7 +272,18 @@
                 <textarea id="eco" name="eco">Write more here</textarea>
             </div>
         </fieldset>
-
+        
+        <fieldset>
+            <legend>Trivias</legend>
+            <div>
+                <label for="govdate">When was your country's modern government established?</label>
+                <input id="govdate" name="govdate" type="date">
+            </div>
+            <div>
+                <label for="col">If you paint a world map, what would be the color of favorite country? It may or may not be your own, nor it has to be the dominant flag color.</label>
+                <input id="col" name="col" type="color">
+            </div>
+        </fieldset>
     </form>
 </body>
 </html>
