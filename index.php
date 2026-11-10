@@ -53,39 +53,43 @@
             <legend>Which ones of these Asian countries do you view the most favorably?</legend>
             <div>
                 <input id="afg" name="asia" type="checkbox">
-                <label for="asia">Afghanistan</label>
+                <label for="afg">Afghanistan</label>
             </div>
             <div>
                 <input id="isr" name="asia" type="checkbox">
-                <label for="asia">Israel</label>
+                <label for="isr">Israel</label>
             </div>
             <div>
                 <input id="pal" name="asia" type="checkbox">
-                <label for="asia">Palestine</label>
+                <label for="pal">Palestine</label>
             </div>
             <div>
                 <input id="sar" name="asia" type="checkbox">
-                <label for="asia">Saudi Arabia</label>
+                <label for="sar">Saudi Arabia</label>
             </div>
             <div>
                 <input id="pak" name="asia" type="checkbox">
-                <label for="asia">Pakistan</label>
+                <label for="pak">Pakistan</label>
             </div>
             <div>
                 <input id="ind" name="asia" type="checkbox">
-                <label for="asia">India</label>
+                <label for="ind">India</label>
             </div>
             <div>
                 <input id="chn" name="asia" type="checkbox">
-                <label for="asia">China</label>
+                <label for="chn">China</label>
+            </div>
+            <div>
+                <input id="tha" name="asia" type="checkbox">
+                <label for="tha">Thailand</label>
             </div>
             <div>
                 <input id="jpn" name="asia" type="checkbox">
-                <label for="asia">Japan</label>
+                <label for="jpn">Japan</label>
             </div>
             <div>
                 <input id="skr" name="asia" type="checkbox">
-                <label for="asia">South Korea</label>
+                <label for="skr">South Korea</label>
             </div>
         </fieldset>
 
