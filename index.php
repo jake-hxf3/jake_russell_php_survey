@@ -173,7 +173,17 @@
             </div>
         </fieldset>
 
-        
+        <fieldset>
+            <legend>Let us know your opinions</legend>
+            <div>
+                <label for="life">Can you share about the current life condition of citizens from your nation?</label>
+                <textarea id="life" name="life">Write more here</textarea>
+            </div>
+            <div>
+                <label for="eco">Do you think that a more developed economy guarantees better life condition? Why?</label>
+                <textarea id="eco" name="eco">Write more here</textarea>
+            </div>
+        </fieldset>
 
     </form>
 </body>
