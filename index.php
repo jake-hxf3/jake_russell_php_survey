@@ -235,6 +235,10 @@
                 <input id="amon" name="gov" type="radio" value="AbsoluteMonarchy">
                 <label for="amon">Absolute Monarchy</label>                
             </div>
+            <div>
+                <input id="unk" name="gov" type="radio" value="Unknown">
+                <label for="unk">I don't know</label>                
+            </div>
         </fieldset>
 
         <fieldset>
@@ -247,6 +251,10 @@
                 <input id="nview" name="view" type="radio" value="no">
                 <label for="nview">No</label>                
             </div>
+            <div>
+                <input id="unkView" name="view" type="radio" value="unknown">
+                <label for="unkView">It depends/No opinions</label>                
+            </div>
         </fieldset>
 
         <fieldset>
@@ -258,6 +266,10 @@
             <div>
                 <input id="nstrive" name="strive" type="radio" value="no">
                 <label for="nstrive">No</label>                
+            </div>
+            <div>
+                <input id="unkStrive" name="strive" type="radio" value="unknown">
+                <label for="unkStrive">It depends/No opinions</label>                
             </div>
         </fieldset>
 
