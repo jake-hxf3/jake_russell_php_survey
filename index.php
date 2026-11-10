@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/main.css" rel="stylesheet" type="text/css">
     <link href="css/grid.css" rel="stylesheet" type="text/css">
-    <title>PHP Geography Survey</title>
+    <title>PHP Survey</title>
 </head>
 <body>
     <header>
@@ -23,6 +23,14 @@
                 <label for="lname">Last Name</label>
                 <input id="lname" name="lname" type="text">
             </div>
+            <div>
+                <label for="age">Age</label>
+                <input id="age" name="age" type="number">
+            </div> 
+            <div>
+                <label for="email">Email Address</label>
+                <input id="email" name="email" type="email">
+            </div> 
             <div>
                 <label for="city">Current City</label>
                 <input id="city" name="city" type="text">
