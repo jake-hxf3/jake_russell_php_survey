@@ -52,48 +52,90 @@
         <fieldset>
             <legend>Which ones of these Asian countries do you view the most favorably?</legend>
             <div>
-                <input id="afg" name="asia" type="checkbox">
+                <input id="afg" name="asia[]" type="checkbox" value="Afghanistan">
                 <label for="afg">Afghanistan</label>
             </div>
             <div>
-                <input id="isr" name="asia" type="checkbox">
+                <input id="isr" name="asia[]" type="checkbox" value="Israel">
                 <label for="isr">Israel</label>
             </div>
             <div>
-                <input id="pal" name="asia" type="checkbox">
+                <input id="pal" name="asia[]" type="checkbox" value="Palestine">
                 <label for="pal">Palestine</label>
             </div>
             <div>
-                <input id="sar" name="asia" type="checkbox">
+                <input id="sar" name="asia[]" type="checkbox" value="SaudiArabia">
                 <label for="sar">Saudi Arabia</label>
             </div>
             <div>
-                <input id="pak" name="asia" type="checkbox">
+                <input id="pak" name="asia[]" type="checkbox" value="Pakistan">
                 <label for="pak">Pakistan</label>
             </div>
             <div>
-                <input id="ind" name="asia" type="checkbox">
+                <input id="ind" name="asia[]" type="checkbox" value="India">
                 <label for="ind">India</label>
             </div>
             <div>
-                <input id="chn" name="asia" type="checkbox">
+                <input id="chn" name="asia[]" type="checkbox" value="China">
                 <label for="chn">China</label>
             </div>
             <div>
-                <input id="tha" name="asia" type="checkbox">
+                <input id="tha" name="asia[]" type="checkbox" value="Thailand">
                 <label for="tha">Thailand</label>
             </div>
             <div>
-                <input id="jpn" name="asia" type="checkbox">
+                <input id="jpn" name="asia[]" type="checkbox" value="Japan">
                 <label for="jpn">Japan</label>
             </div>
             <div>
-                <input id="skr" name="asia" type="checkbox">
+                <input id="skr" name="asia[]" type="checkbox" value="SouthKorea">
                 <label for="skr">South Korea</label>
             </div>
         </fieldset>
 
+        <fieldset>
+            <legend>Which ones of these African countries do you view the most favorably?</legend>
+            <div>
+                <input id="alg" name="africa[]" type="checkbox" value="Alegria">
+                <label for="alg">Algeria</label>
+            </div>
+            <div>
+                <input id="egy" name="africa[]" type="checkbox" value="Egypt">
+                <label for="egy">Egypt</label>
+            </div>
+            <div>
+                <input id="nig" name="africa[]" type="checkbox" value="Nigeria">
+                <label for="nig">Nigeria</label>
+            </div>
+            <div>
+                <input id="etp" name="africa[]" type="checkbox" value="Ethiopia">
+                <label for="etp">Ethiopia</label>
+            </div>
+            <div>
+                <input id="ghn" name="africa[]" type="checkbox" value="Ghana">
+                <label for="ghn">Ghana</label>
+            </div>
+            <div>
+                <input id="saf" name="africa[]" type="checkbox" value="SouthAfrica">
+                <label for="saf">South Africa</label>
+            </div>
+            <div>
+                <input id="tzn" name="africa[]" type="checkbox" value="Tanzania">
+                <label for="tzn">Tanzania</label>
+            </div>
+            <div>
+                <input id="mrc" name="africa[]" type="checkbox" value="Morocco">
+                <label for="mrc">Morocco</label>
+            </div>
+        </fieldset>
 
+        <fieldset>
+            <legend>Which ones of these European countries do you view the most favorably?</legend>
+            <div>
+                <input id="bri" name="europe[]" type="checkbox" value="UnitedKingdom">
+                <label for="bri">United Kingdom</label>
+            </div>
+        </fieldset>
 
     </form>
 </body>
