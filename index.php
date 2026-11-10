@@ -135,7 +135,45 @@
                 <input id="bri" name="europe[]" type="checkbox" value="UnitedKingdom">
                 <label for="bri">United Kingdom</label>
             </div>
+            <div>
+                <input id="fra" name="europe[]" type="checkbox" value="France">
+                <label for="fra">France</label>
+            </div>
+            <div>
+                <input id="ger" name="europe[]" type="checkbox" value="Germany">
+                <label for="ger">Germany</label>
+            </div>
+            <div>
+                <input id="hun" name="europe[]" type="checkbox" value="Hungary">
+                <label for="bri">Hungary</label>
+            </div>
+            <div>
+                <input id="pol" name="europe[]" type="checkbox" value="Poland">
+                <label for="bri">Poland</label>
+            </div>
+            <div>
+                <input id="spa" name="europe[]" type="checkbox" value="Spain">
+                <label for="spa">Spain</label>
+            </div>
+            <div>
+                <input id="gre" name="europe[]" type="checkbox" value="Greece">
+                <label for="gre">Greece</label>
+            </div>
+            <div>
+                <input id="ita" name="europe[]" type="checkbox" value="Italy">
+                <label for="bri">Italy</label>
+            </div>
+            <div>
+                <input id="rus" name="europe[]" type="checkbox" value="Russia">
+                <label for="bri">Russia</label>
+            </div>
+            <div>
+                <input id="ukr" name="europe[]" type="checkbox" value="Ukraine">
+                <label for="ukr">Ukraine</label>
+            </div>
         </fieldset>
+
+        
 
     </form>
 </body>
