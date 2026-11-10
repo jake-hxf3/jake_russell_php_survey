@@ -12,7 +12,7 @@
         <h1>Welcome to the GeoBuster Survey</h1>
     </header>
     
-    <form action="">
+    <form action="includes/scripts/process_survey.php" method="POST">
         <fieldset>
             <legend>Tell us about yourself</legend>
             <div>
@@ -284,6 +284,8 @@
                 <input id="col" name="col" type="color">
             </div>
         </fieldset>
+
+        <button type="submit">Send</button>
     </form>
 </body>
 </html>
