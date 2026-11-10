@@ -49,6 +49,48 @@
             </div>     
         </fieldset>
 
+        <fieldset>
+            <legend>Which ones of these Asian countries do you view the most favorably?</legend>
+            <div>
+                <input id="afg" name="asia" type="checkbox">
+                <label for="asia">Afghanistan</label>
+            </div>
+            <div>
+                <input id="isr" name="asia" type="checkbox">
+                <label for="asia">Israel</label>
+            </div>
+            <div>
+                <input id="pal" name="asia" type="checkbox">
+                <label for="asia">Palestine</label>
+            </div>
+            <div>
+                <input id="sar" name="asia" type="checkbox">
+                <label for="asia">Saudi Arabia</label>
+            </div>
+            <div>
+                <input id="pak" name="asia" type="checkbox">
+                <label for="asia">Pakistan</label>
+            </div>
+            <div>
+                <input id="ind" name="asia" type="checkbox">
+                <label for="asia">India</label>
+            </div>
+            <div>
+                <input id="chn" name="asia" type="checkbox">
+                <label for="asia">China</label>
+            </div>
+            <div>
+                <input id="jpn" name="asia" type="checkbox">
+                <label for="asia">Japan</label>
+            </div>
+            <div>
+                <input id="skr" name="asia" type="checkbox">
+                <label for="asia">South Korea</label>
+            </div>
+        </fieldset>
+
+
+
     </form>
 </body>
 </html>
