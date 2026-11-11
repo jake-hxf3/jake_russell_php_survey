@@ -49,6 +49,17 @@ forEach($formInput as $field => $value) {
             $errors[$field] = 'This field is illegitimate.';
         }
     }
+// they may also change one of the field names used for an array to the one used for strings    
+    $fieldData = $formInput[$field];
+    if (!in_array($field, $contArrays)) {
+        if(is_array($fieldData)) {
+            $errors[$field] = '"'.$field.'" must not be an array.';
+        }
+    } else {
+        if(!is_array($fieldData)) {
+            $errors[$field] = '"'.$field.'" must be an array.';
+        }
+    }
 }
 
 // loop through the required fields and perform a blank/nonexistent field check
@@ -62,12 +73,12 @@ forEach($required as $field) {
 
 // loop through the continents' names, copy their respective countries into the respective key of the array of arrays
 // this also validates whether a field with a continent name has the array type or not
-forEach($contArrays as $field) {
+/*forEach($contArrays as $field) {
     $inpArray[$field] = $formInput[$field] ?? [];
     if (!is_array($inpArray[$field])) {
         $errors[$field] = '"'.$field.'" must be an array.';
     }
-}
+}*/
 
 
 $_SESSION['form_errors'] = $errors;
