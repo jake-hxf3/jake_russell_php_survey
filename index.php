@@ -277,11 +277,11 @@
             <legend>Let us know your opinions</legend>
             <div>
                 <label for="life">Can you share about the current life condition of citizens from your nation?</label>
-                <textarea id="life" name="life">Write more here</textarea>
+                <textarea id="life" name="life" placeholder="Write more here..."></textarea>
             </div>
             <div>
                 <label for="eco">Do you think that a more developed economy guarantees better life condition? Why?</label>
-                <textarea id="eco" name="eco">Write more here</textarea>
+                <textarea id="eco" name="eco" placeholder="Write more here..."></textarea>
             </div>
         </fieldset>
         
@@ -293,7 +293,8 @@
             </div>
             <div>
                 <label for="col">If you paint a world map, what would be the color of favorite country? It may or may not be your own, nor it has to be the dominant flag color.</label>
-                <input id="col" name="col" type="color">
+                <input id="col" name="col" type="color" value="#888888">
+                
             </div>
         </fieldset>
 
