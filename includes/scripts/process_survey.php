@@ -25,7 +25,13 @@ $errors = [];
 $required = ['fname', 'lname', 'email', 'city', 'cstate', 'bstate', 'view', 'strive'];
 $optional = ['age', 'fstate', 'asia', 'africa', 'europe', 'cont', 'gov', 'life', 'eco', 'govdate', 'col'];
 
-// to be encapsulated
+// acceptable continent field names for the arrays to be copied and checked later
+$continents = ['asia', 'africa', 'europe'];
+// this is an array of arrays, its keys being the countries arrays copied from $formInput
+$inpArray = array_fill_keys($continents, '');
+
+$countries = [''];
+
 // they may insert or replace in a foreign field not existing here so this part of the function prevents this
 forEach($formInput as $field => $value) {
     if (!in_array($field, $required)) {
@@ -35,12 +41,24 @@ forEach($formInput as $field => $value) {
     }
 }
 
-
+// loop through the required fields and perform a blank/nonexistent field check
 forEach($required as $field) {
-    if (!isset($formInput[$field]) || ($formInput[$field]==='')) {
-        $errors[$field] = '"'.$field.'" must exist and be filled.';
+    if (!isset($formInput[$field])) {
+        $errors[$field] = '"'.$field.'" must exist.';
+    } else if ($formInput[$field]==='') {
+        $errors[$field] = '"'.$field.'" must not be blank.';
     }
 }
+
+// loop through the continents' names, copy their respective countries into the respective key of the array of arrays
+// this also validates whether a field with a continent name has the array type or not
+forEach($continents as $field) {
+    $inpArray[$field] = $formInput[$field] ?? [];
+    if (!is_array($inpArray[$field])) {
+        $errors[$field] = '"'.$field.'" must be an array.';
+    }
+}
+
 
 $_SESSION['form_errors'] = $errors;
 
