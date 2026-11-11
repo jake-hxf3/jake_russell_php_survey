@@ -30,8 +30,15 @@ $optional = ['age', 'fstate', 'asia', 'africa', 'europe', 'cont', 'gov', 'life',
 forEach($formInput as $field => $value) {
     if (!in_array($field, $required)) {
         if(!in_array($field, $optional)) {
-            $errors[$field] = "This field is illegitimate.";
+            $errors[$field] = 'This field is illegitimate.';
         }
+    }
+}
+
+
+forEach($required as $field) {
+    if (!isset($formInput[$field]) || ($formInput[$field]==='')) {
+        $errors[$field] = '"'.$field.'" must exist and be filled.';
     }
 }
 
