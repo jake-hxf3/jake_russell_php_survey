@@ -18,4 +18,21 @@ $formInput = $_POST;
 
 $_SESSION['form_input'] = $formInput;
 
+
+$errors = [];
+// fields by types: required and optional
+// these fields have to be validated
+$required = ['fname', 'lname', 'email', 'city', 'cstate', 'bstate', 'view', 'strive'];
+$optional = ['age', 'fstate', 'asia', 'africa', 'europe', 'cont', 'gov', 'life', 'eco', 'govdate', 'col'];
+
+// to be encapsulated
+// they may insert or replace in a foreign field value so this part of the function prevents this
+forEach($formInput as $field => $value) {
+    if (!array_key_exists($field, $required)) {
+        if(!array_key_exists($field, $optional)) {
+            $errors[$field] = "This field is illegitimate.";
+        }
+    }
+}
+
 prettyDump($formInput);
