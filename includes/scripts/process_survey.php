@@ -26,13 +26,20 @@ $required = ['fname', 'lname', 'email', 'city', 'cstate', 'bstate', 'view', 'str
 $optional = ['age', 'fstate', 'asia', 'africa', 'europe', 'cont', 'gov', 'life', 'eco', 'govdate', 'col'];
 
 // to be encapsulated
-// they may insert or replace in a foreign field value so this part of the function prevents this
+// they may insert or replace in a foreign field not existing here so this part of the function prevents this
 forEach($formInput as $field => $value) {
-    if (!array_key_exists($field, $required)) {
-        if(!array_key_exists($field, $optional)) {
+    if (!in_array($field, $required)) {
+        if(!in_array($field, $optional)) {
             $errors[$field] = "This field is illegitimate.";
         }
     }
 }
 
-prettyDump($formInput);
+$_SESSION['form_errors'] = $errors;
+
+
+if (count($errors) === 0) {
+    prettyDump($formInput);
+} else {
+    prettyDump($errors);
+}
