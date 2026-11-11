@@ -26,11 +26,21 @@ $required = ['fname', 'lname', 'email', 'city', 'cstate', 'bstate', 'view', 'str
 $optional = ['age', 'fstate', 'asia', 'africa', 'europe', 'cont', 'gov', 'life', 'eco', 'govdate', 'col'];
 
 // acceptable continent field names for the arrays to be copied and checked later
-$continents = ['asia', 'africa', 'europe'];
+$contArrays = ['asia', 'africa', 'europe'];
 // this is an array of arrays, its keys being the countries arrays copied from $formInput
-$inpArray = array_fill_keys($continents, '');
+$inpArray = array_fill_keys($contArrays, '');
 
-$countries = [''];
+
+//another array of arrays to store the available countries according to their continents, to be validated against later
+$countries = [
+    'asia' => ['Afghanistan', 'Israel', 'Palestine', 'SaudiArabia', 'Pakistan', 'India', 'China', 'Thailand', 'Japan', 'SouthKorea'],
+    'africa' => ['Algeria', 'Egypt', 'Nigeria', 'Ethiopia', 'Ghana', 'SouthAfrica', 'Tanzania', 'Morocco'],
+    'europe' => ['UnitedKingdom', 'France', 'Germany', 'Hungary', 'Poland',  'Spain', 'Greece', 'Italy', 'Russia', 'Ukraine']
+];
+// other factual arrays to validate against later
+$continents = ['Asia', 'Africa', 'Europe', 'NorthAmerica', 'SouthAmerica', 'Oceania', 'Antarctica'];
+$govs = ['PresidentalRepublic', 'SemiPresidentalRepublic', 'OnePartyState', 'ParliamentaryRepublic', 'ConstitutionalMonarchy', 'SemiConstitutionalMonarchy', 'AbsoluteMonarchy', 'Unknown'];
+$ops = ['yes', 'no', 'unknown'];
 
 // they may insert or replace in a foreign field not existing here so this part of the function prevents this
 forEach($formInput as $field => $value) {
@@ -52,7 +62,7 @@ forEach($required as $field) {
 
 // loop through the continents' names, copy their respective countries into the respective key of the array of arrays
 // this also validates whether a field with a continent name has the array type or not
-forEach($continents as $field) {
+forEach($contArrays as $field) {
     $inpArray[$field] = $formInput[$field] ?? [];
     if (!is_array($inpArray[$field])) {
         $errors[$field] = '"'.$field.'" must be an array.';
