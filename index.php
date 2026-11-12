@@ -1,3 +1,15 @@
+<?php
+declare(strict_types=1);
+session_start();
+
+require_once __DIR__ . '/includes/helpers.php';
+
+$errors = $_SESSION['form_errors'] ?? [];
+$submittedInputs = $_SESSION['form_input'] ?? [];
+
+//$_SESSION['form_input'] = [];
+//$_SESSION['form_errors'] = [];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,16 +23,27 @@
     <header>
         <h1>Welcome to the GeoBuster Survey</h1>
     </header>
+
+    <p id="notification">
+        <?php
+            if(count($errors)>0) {
+                // returns the first error message
+                echo reset($errors);
+            } else {
+                echo "Your takes are successfully sent.";
+            }
+        ?>
+    </p>
     
     <form action="includes/scripts/process_survey.php" method="POST">
         <fieldset>
             <legend>Tell us about yourself</legend>
             <div>
-                <label for="fname">First Name</label>
+                <label for="fname">First Name*</label>
                 <input id="fname" name="fname" type="text" autocomplete="on">
             </div>
             <div>
-                <label for="lname">Last Name</label>
+                <label for="lname">Last Name*</label>
                 <input id="lname" name="lname" type="text" autocomplete="on">
             </div>
             <div>
@@ -28,25 +51,28 @@
                 <input id="age" name="age" type="number">
             </div> 
             <div>
-                <label for="email">Email Address</label>
+                <label for="email">Email Address*</label>
                 <input id="email" name="email" type="email" autocomplete="on">
             </div> 
             <div>
-                <label for="city">Current City</label>
+                <label for="city">Current City*</label>
                 <input id="city" name="city" type="text" autocomplete="on">
             </div>          
             <div>
-                <label for="cstate">Current State/Country</label>
+                <label for="cstate">Current State/Country*</label>
                 <input id="cstate" name="cstate" type="text" autocomplete="on">
             </div>         
             <div>
-                <label for="bstate">Country of Origin</label>
+                <label for="bstate">Country of Origin*</label>
                 <input id="bstate" name="bstate" type="text" autocomplete="on">
             </div>     
             <div>
                 <label for="fstate">Your favorite country (other than your own)</label>
                 <input id="fstate" name="fstate" type="text" autocomplete="on">
             </div>     
+            <div>
+                <p>(*) are required</p>
+            </div>
         </fieldset>
 
         <fieldset>
@@ -277,11 +303,11 @@
             <legend>Let us know your opinions</legend>
             <div>
                 <label for="life">Can you share about the current life condition of citizens from your nation?</label>
-                <textarea id="life" name="life" placeholder="Write more here..."></textarea>
+                <textarea id="life" name="life" maxlength="850" placeholder="Write more here..."></textarea>
             </div>
             <div>
                 <label for="eco">Do you think that a more developed economy guarantees better life condition? Why?</label>
-                <textarea id="eco" name="eco" placeholder="Write more here..."></textarea>
+                <textarea id="eco" name="eco" maxlength="850" placeholder="Write more here..."></textarea>
             </div>
         </fieldset>
         

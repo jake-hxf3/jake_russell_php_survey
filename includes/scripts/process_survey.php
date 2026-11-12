@@ -24,6 +24,7 @@ $errors = [];
 // these fields have to be validated
 $required = ['fname', 'lname', 'email', 'city', 'cstate', 'bstate', 'view', 'strive'];
 $optional = ['age', 'fstate', 'asia', 'africa', 'europe', 'cont', 'gov', 'life', 'eco', 'govdate', 'col'];
+$textAreas = ['life','eco'];
 
 // acceptable continent field names for the arrays to be copied and checked later
 $contArrays = ['asia', 'africa', 'europe'];
@@ -78,6 +79,18 @@ forEach($required as $field) {
     }
 }
 
+// validates the email using FILTER_VALIDATE_EMAIL default constant
+if (!filter_var($formInput['email'], FILTER_VALIDATE_EMAIL)){
+    $errors['email'] = '"email" is not in a valid format';
+}
+
+// ctype_digit() checks if the string is all numerical digits
+if(!empty($formInput['age'])){
+    if(!ctype_digit($formInput['age'])) {
+        $errors['age'] = '"age" must be a number.';
+    }
+}
+
 // loop through the continents' names as the keys
 forEach($contArrays as $field) {
     // for each key, copy their respective countries from the field whose name is that key 
@@ -92,19 +105,46 @@ forEach($contArrays as $field) {
     }
 }
 
+
+// loop through the array containing radio fields and their option lists, then check if the field value of $formInput is within that list
 forEach($radios as $field => $options) {
-    if(!in_array($formInput[$field], $options)) {
-        $errors[$field] = '"'.$formInput[$field].'" is not in the available options';
+    $radio = $formInput[$field] ?? '';
+    if(!empty($radio) && !in_array($radio, $options)) {
+        $errors[$field] = '"'.$radio.'" is not one of the available options.';
     }   
 }
 
+// check if the text areas is over the character limits by its string length
+forEach($textAreas as $field) {
+    if(strlen($formInput[$field]) > 850) {
+        $errors[$field] = '"'.$field.'" is over the character limit.';
+    }
+}
+
+
+// the following checks if it's a valid date, which is optional (can be blank)
+// using strtotime(), which returns false if it's not recognized as any kind of date
+if(!empty($formInput['govdate'])) {
+    if(!strtotime($formInput['govdate'])) {
+        $errors['govdate'] = '"govdate" must be a valid date.';
+    }
+}
+
+
+// validate if it's a valid color
+// use a regular expression to find the string pattern that starts with #, then 6 numerical digits or letters from A-Z, then ends
+if(!empty($formInput['col'])) {
+    if(!preg_match('/^[#][a-f0-9]{6}$/', $formInput['col'])) {
+        $errors['col'] = '"col" must be a hex number from #000000 to #ffffff.';
+    }
+}
 
 
 $_SESSION['form_errors'] = $errors;
+$_SESSION['form_input'] = $formInput;
 
+//prettyDump($formInput);
+//prettyDump($errors);
 
-if (count($errors) === 0) {
-    prettyDump($formInput);
-} else {
-    prettyDump($errors);
-}
+// redirects to the main page
+header('Location: /jake_russell_php_survey/index.php');
