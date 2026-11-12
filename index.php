@@ -2,13 +2,13 @@
 declare(strict_types=1);
 session_start();
 
-require_once __DIR__ . '\includes\helpers.php';
+require_once __DIR__ . '/includes/helpers.php';
 
 $errors = $_SESSION['form_errors'] ?? [];
 $submittedInputs = $_SESSION['form_input'] ?? [];
 
-$_SESSION['form_input'] = [];
-$_SESSION['form_errors'] = [];
+//$_SESSION['form_input'] = [];
+//$_SESSION['form_errors'] = [];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +24,16 @@ $_SESSION['form_errors'] = [];
         <h1>Welcome to the GeoBuster Survey</h1>
     </header>
 
-    <p id="notification"></p>
+    <p id="notification">
+        <?php
+            if(count($errors)>0) {
+                // returns the first error message
+                echo reset($errors);
+            } else {
+                echo "Your takes are successfully sent.";
+            }
+        ?>
+    </p>
     
     <form action="includes/scripts/process_survey.php" method="POST">
         <fieldset>
