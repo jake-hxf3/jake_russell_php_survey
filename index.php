@@ -17,11 +17,11 @@
             <legend>Tell us about yourself</legend>
             <div>
                 <label for="fname">First Name</label>
-                <input id="fname" name="fname" type="text">
+                <input id="fname" name="fname" type="text" autocomplete="on">
             </div>
             <div>
                 <label for="lname">Last Name</label>
-                <input id="lname" name="lname" type="text">
+                <input id="lname" name="lname" type="text" autocomplete="on">
             </div>
             <div>
                 <label for="age">Age</label>
@@ -29,23 +29,23 @@
             </div> 
             <div>
                 <label for="email">Email Address</label>
-                <input id="email" name="email" type="email">
+                <input id="email" name="email" type="email" autocomplete="on">
             </div> 
             <div>
                 <label for="city">Current City</label>
-                <input id="city" name="city" type="text">
+                <input id="city" name="city" type="text" autocomplete="on">
             </div>          
             <div>
                 <label for="cstate">Current State/Country</label>
-                <input id="cstate" name="cstate" type="text">
+                <input id="cstate" name="cstate" type="text" autocomplete="on">
             </div>         
             <div>
                 <label for="bstate">Country of Origin</label>
-                <input id="bstate" name="bstate" type="text">
+                <input id="bstate" name="bstate" type="text" autocomplete="on">
             </div>     
             <div>
                 <label for="fstate">Your favorite country (other than your own)</label>
-                <input id="fstate" name="fstate" type="text">
+                <input id="fstate" name="fstate" type="text" autocomplete="on">
             </div>     
         </fieldset>
 
@@ -224,16 +224,20 @@
                 <label for="parl">Parliamentary Republic</label>                
             </div>
             <div>
-                <input id="cmon" name="gov" type="radio" value="Constitutional Monarchy">
+                <input id="cmon" name="gov" type="radio" value="ConstitutionalMonarchy">
                 <label for="cmon">Constitutional Monarchy</label>                
             </div>
             <div>
-                <input id="scmon" name="gov" type="radio" value="Semi-constitutional Monarchy">
+                <input id="scmon" name="gov" type="radio" value="SemiConstitutionalMonarchy">
                 <label for="scmon">Semi-constitutional Monarchy</label>                
             </div>
             <div>
                 <input id="amon" name="gov" type="radio" value="AbsoluteMonarchy">
                 <label for="amon">Absolute Monarchy</label>                
+            </div>
+            <div>
+                <input id="unk" name="gov" type="radio" value="Unknown">
+                <label for="unk">I don't know</label>                
             </div>
         </fieldset>
 
@@ -247,6 +251,10 @@
                 <input id="nview" name="view" type="radio" value="no">
                 <label for="nview">No</label>                
             </div>
+            <div>
+                <input id="unkView" name="view" type="radio" value="unknown">
+                <label for="unkView">It depends/No opinions</label>                
+            </div>
         </fieldset>
 
         <fieldset>
@@ -259,17 +267,21 @@
                 <input id="nstrive" name="strive" type="radio" value="no">
                 <label for="nstrive">No</label>                
             </div>
+            <div>
+                <input id="unkStrive" name="strive" type="radio" value="unknown">
+                <label for="unkStrive">It depends/No opinions</label>                
+            </div>
         </fieldset>
 
         <fieldset>
             <legend>Let us know your opinions</legend>
             <div>
                 <label for="life">Can you share about the current life condition of citizens from your nation?</label>
-                <textarea id="life" name="life">Write more here</textarea>
+                <textarea id="life" name="life" placeholder="Write more here..."></textarea>
             </div>
             <div>
                 <label for="eco">Do you think that a more developed economy guarantees better life condition? Why?</label>
-                <textarea id="eco" name="eco">Write more here</textarea>
+                <textarea id="eco" name="eco" placeholder="Write more here..."></textarea>
             </div>
         </fieldset>
         
@@ -281,7 +293,8 @@
             </div>
             <div>
                 <label for="col">If you paint a world map, what would be the color of favorite country? It may or may not be your own, nor it has to be the dominant flag color.</label>
-                <input id="col" name="col" type="color">
+                <input id="col" name="col" type="color" value="#888888">
+                
             </div>
         </fieldset>
 
