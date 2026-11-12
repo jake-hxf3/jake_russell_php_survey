@@ -78,6 +78,11 @@ forEach($required as $field) {
     }
 }
 
+// validates the email using FILTER_VALIDATE_EMAIL default constant
+if (!filter_var($formInput['email'], FILTER_VALIDATE_EMAIL)){
+    $errors['email'] = 'Email is not in a valid format';
+}
+
 // ctype_digit() checks if the string is all numerical digits
 if(!ctype_digit($formInput['age'])) {
     $errors['age'] = '"age" must be an number.';
@@ -97,11 +102,15 @@ forEach($contArrays as $field) {
     }
 }
 
+
+// loop through the array containing radio fields and their option lists, then check if the field value of $formInput is within that list
 forEach($radios as $field => $options) {
     if(!in_array($formInput[$field], $options)) {
         $errors[$field] = '"'.$formInput[$field].'" is not in the available options';
     }   
 }
+
+
 
 // the following checks if it's a valid color
 // use a regular expression to check for the string pattern that starts with #, then 6 numerical digits or letters from A-Z
