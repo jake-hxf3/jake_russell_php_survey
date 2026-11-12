@@ -81,11 +81,11 @@ forEach($required as $field) {
 
 // validates the email using FILTER_VALIDATE_EMAIL default constant
 if (!filter_var($formInput['email'], FILTER_VALIDATE_EMAIL)){
-    $errors['email'] = 'Email is not in a valid format';
+    $errors['email'] = '"email" is not in a valid format';
 }
 
 // ctype_digit() checks if the string is all numerical digits
-if($formInput['age'] !==''){
+if(!empty($formInput['age'])){
     if(!ctype_digit($formInput['age'])) {
         $errors['age'] = '"age" must be a number.';
     }
@@ -108,8 +108,9 @@ forEach($contArrays as $field) {
 
 // loop through the array containing radio fields and their option lists, then check if the field value of $formInput is within that list
 forEach($radios as $field => $options) {
-    if(!in_array($formInput[$field], $options)) {
-        $errors[$field] = '"'.$formInput[$field].'" is not in the available options.';
+    $radio = $formInput[$field] ?? '';
+    if(!empty($radio) && !in_array($radio, $options)) {
+        $errors[$field] = '"'.$radio.'" is not one of the available options.';
     }   
 }
 
@@ -123,7 +124,7 @@ forEach($textAreas as $field) {
 
 // the following checks if it's a valid date, which is optional (can be blank)
 // using strtotime(), which returns false if it's not recognized as any kind of date
-if($formInput['govdate']!=='') {
+if(!empty($formInput['govdate'])) {
     if(!strtotime($formInput['govdate'])) {
         $errors['govdate'] = '"govdate" must be a valid date.';
     }
@@ -132,15 +133,18 @@ if($formInput['govdate']!=='') {
 
 // validate if it's a valid color
 // use a regular expression to find the string pattern that starts with #, then 6 numerical digits or letters from A-Z, then ends
-if(!preg_match('/^[#][a-f0-9]{6}$/', $formInput['col'])) {
-    $errors['col'] = '"col" must be a hex number from #000000 to #ffffff.';
+if(!empty($formInput['col'])) {
+    if(!preg_match('/^[#][a-f0-9]{6}$/', $formInput['col'])) {
+        $errors['col'] = '"col" must be a hex number from #000000 to #ffffff.';
+    }
 }
-
-
 
 
 $_SESSION['form_errors'] = $errors;
 $_SESSION['form_input'] = $formInput;
+
+//prettyDump($formInput);
+//prettyDump($errors);
 
 // redirects to the main page
 header('Location: /jake_russell_php_survey/index.php');
