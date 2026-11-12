@@ -111,8 +111,15 @@ forEach($radios as $field => $options) {
 }
 
 
+// the following checks if it's a valid date, which is optional
+if(!$formInput['govdate']==='') {
+    if(!strtotime($formInput['govdate'])) {
+        $errors['govdate'] = '"govdate" must be a valid date';
+    }
+}
 
-// the following checks if it's a valid color
+
+// validate if it's a valid color
 // use a regular expression to check for the string pattern that starts with #, then 6 numerical digits or letters from A-Z
 if(!preg_match_all('/#[a-f0-9]{6}/', $formInput['col'])) {
     $errors['col'] = '"col" must be a hex number from #000000 to #ffffff.';
