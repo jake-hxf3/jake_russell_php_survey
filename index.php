@@ -5,10 +5,12 @@ session_start();
 require_once __DIR__ . '/includes/helpers.php';
 
 $errors = $_SESSION['form_errors'] ?? [];
+$warning = $_SESSION['warning'];
 $submittedInputs = $_SESSION['form_input'] ?? [];
 
-//$_SESSION['form_input'] = [];
-//$_SESSION['form_errors'] = [];
+$_SESSION['form_input'] = [];
+$_SESSION['form_errors'] = [];
+$_SESSION['warning'] = [];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,20 +20,22 @@ $submittedInputs = $_SESSION['form_input'] ?? [];
     <link href="css/main.css" rel="stylesheet" type="text/css">
     <link href="css/grid.css" rel="stylesheet" type="text/css">
     <title>PHP Survey</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Welcome to the GeoBuster Survey</h1>
     </header>
 
-    <p id="notification">
+    <input type="hidden" value="<?php errorCountReset($errors); ?>">
+
+    <p id="notification" class="error">
         <?php
-            if(count($errors)>0) {
-                // returns the first error message
-                echo reset($errors);
-            } else {
-                echo "Your takes are successfully sent.";
-            }
+            errorCountReset($warning);
         ?>
     </p>
     
@@ -39,35 +43,35 @@ $submittedInputs = $_SESSION['form_input'] ?? [];
         <fieldset>
             <legend>Tell us about yourself</legend>
             <div>
-                <label for="fname">First Name*</label>
+                <label for="fname" class="<?php errorStyle($errors, "fname")?>">First Name*</label>
                 <input id="fname" name="fname" type="text" autocomplete="on">
             </div>
             <div>
-                <label for="lname">Last Name*</label>
+                <label for="lname" class="<?php errorStyle($errors, "lname")?>">Last Name*</label>
                 <input id="lname" name="lname" type="text" autocomplete="on">
             </div>
             <div>
-                <label for="age">Age</label>
+                <label for="age" class="<?php errorStyle($errors, "age")?>">Age</label>
                 <input id="age" name="age" type="number">
             </div> 
             <div>
-                <label for="email">Email Address*</label>
-                <input id="email" name="email" type="email" autocomplete="on">
+                <label for="email" class="<?php errorStyle($errors, "email")?>">Email Address*</label>
+                <input id="email" name="email" type="email" autocomplete="on" placeholder="name@email.com">
             </div> 
             <div>
-                <label for="city">Current City*</label>
+                <label for="city" class="<?php errorStyle($errors, "city")?>">Current City*</label>
                 <input id="city" name="city" type="text" autocomplete="on">
             </div>          
             <div>
-                <label for="cstate">Current State/Country*</label>
+                <label for="cstate" class="<?php errorStyle($errors, "cstate")?>">Current State/Country*</label>
                 <input id="cstate" name="cstate" type="text" autocomplete="on">
             </div>         
             <div>
-                <label for="bstate">Country of Origin*</label>
+                <label for="bstate" class="<?php errorStyle($errors, "bstate")?>">Country of Origin*</label>
                 <input id="bstate" name="bstate" type="text" autocomplete="on">
             </div>     
             <div>
-                <label for="fstate">Your favorite country (other than your own)</label>
+                <label for="fstate" class="<?php errorStyle($errors, "fstate")?>">Your favorite country (other than your own)</label>
                 <input id="fstate" name="fstate" type="text" autocomplete="on">
             </div>     
             <div>
@@ -75,7 +79,7 @@ $submittedInputs = $_SESSION['form_input'] ?? [];
             </div>
         </fieldset>
 
-        <fieldset>
+        <fieldset class="<?php errorStyle($errors, "asia")?>">
             <legend>Which ones of these Asian countries do you view the most favorably?</legend>
             <div>
                 <input id="afg" name="asia[]" type="checkbox" value="Afghanistan">
@@ -119,7 +123,7 @@ $submittedInputs = $_SESSION['form_input'] ?? [];
             </div>
         </fieldset>
 
-        <fieldset>
+        <fieldset class="<?php errorStyle($errors, "africa")?>">
             <legend>Which ones of these African countries do you view the most favorably?</legend>
             <div>
                 <input id="alg" name="africa[]" type="checkbox" value="Alegria">
@@ -155,8 +159,8 @@ $submittedInputs = $_SESSION['form_input'] ?? [];
             </div>
         </fieldset>
 
-        <fieldset>
-            <legend>Which ones of these European countries do you view the most favorably?</legend>
+        <fieldset class="<?php errorStyle($errors, "europe")?>">
+            <legend >Which ones of these European countries do you view the most favorably?</legend>
             <div>
                 <input id="bri" name="europe[]" type="checkbox" value="UnitedKingdom">
                 <label for="bri">United Kingdom</label>
@@ -199,7 +203,7 @@ $submittedInputs = $_SESSION['form_input'] ?? [];
             </div>
         </fieldset>
 
-        <fieldset>
+        <fieldset class="<?php errorStyle($errors, "cont")?>">
             <legend>Which continent are you living in right now?</legend>
             <div>
                 <input id="asia" name="cont" type="radio" value="Asia">
@@ -231,8 +235,8 @@ $submittedInputs = $_SESSION['form_input'] ?? [];
             </div>
         </fieldset>
 
-        <fieldset>
-            <legend>What government system is your country under?</legend>
+        <fieldset class="<?php errorStyle($errors, "gov")?>">
+            <legend >What government system is your country under?</legend>
             <div>
                 <input id="pres" name="gov" type="radio" value="PresidentalRepublic">
                 <label for="pres">Presidental Republic</label>                
@@ -267,7 +271,7 @@ $submittedInputs = $_SESSION['form_input'] ?? [];
             </div>
         </fieldset>
 
-        <fieldset>
+        <fieldset class="<?php errorStyle($errors, "view")?>">
             <legend>Do you view your own country favorably?</legend>
             <div>
                 <input id="yview" name="view" type="radio" value="yes">
@@ -283,8 +287,8 @@ $submittedInputs = $_SESSION['form_input'] ?? [];
             </div>
         </fieldset>
 
-        <fieldset>
-            <legend>Do you think your country should strive to be economically developed?</legend>
+        <fieldset class="<?php errorStyle($errors, "strive")?>">
+            <legend >Do you think your country should strive to be economically developed?</legend>
             <div>
                 <input id="ystrive" name="strive" type="radio" value="yes">
                 <label for="ystrive">Yes</label>                
@@ -303,11 +307,11 @@ $submittedInputs = $_SESSION['form_input'] ?? [];
             <legend>Let us know your opinions</legend>
             <div>
                 <label for="life">Can you share about the current life condition of citizens from your nation?</label>
-                <textarea id="life" name="life" maxlength="850" placeholder="Write more here..."></textarea>
+                <textarea id="life" name="life" maxlength="850" placeholder="Write more here..." class="<?php errorStyle($errors, "life")?>"></textarea>
             </div>
             <div>
                 <label for="eco">Do you think that a more developed economy guarantees better life condition? Why?</label>
-                <textarea id="eco" name="eco" maxlength="850" placeholder="Write more here..."></textarea>
+                <textarea id="eco" name="eco" maxlength="850" placeholder="Write more here..." class="<?php errorStyle($errors, "eco")?>"></textarea>
             </div>
         </fieldset>
         
@@ -315,16 +319,17 @@ $submittedInputs = $_SESSION['form_input'] ?? [];
             <legend>Trivias</legend>
             <div>
                 <label for="govdate">When was your country's modern government established?</label>
-                <input id="govdate" name="govdate" type="date">
+                <input id="govdate" name="govdate" type="date" class="<?php errorStyle($errors, "govdate")?>">
             </div>
             <div>
                 <label for="col">If you paint a world map, what would be the color of favorite country? It may or may not be your own, nor it has to be the dominant flag color.</label>
-                <input id="col" name="col" type="color" value="#888888">
-                
+                <input id="col" name="col" type="color" value="#888888" class="<?php errorStyle($errors, "govdate")?>">
             </div>
         </fieldset>
 
         <button type="submit">Send</button>
     </form>
+
+    <script src="main.js"></script>
 </body>
 </html>
