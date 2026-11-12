@@ -277,11 +277,11 @@
             <legend>Let us know your opinions</legend>
             <div>
                 <label for="life">Can you share about the current life condition of citizens from your nation?</label>
-                <textarea id="life" name="life" placeholder="Write more here..."></textarea>
+                <textarea id="life" name="life" maxlength="850" placeholder="Write more here..."></textarea>
             </div>
             <div>
                 <label for="eco">Do you think that a more developed economy guarantees better life condition? Why?</label>
-                <textarea id="eco" name="eco" placeholder="Write more here..."></textarea>
+                <textarea id="eco" name="eco" maxlength="850" placeholder="Write more here..."></textarea>
             </div>
         </fieldset>
         

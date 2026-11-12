@@ -24,6 +24,7 @@ $errors = [];
 // these fields have to be validated
 $required = ['fname', 'lname', 'email', 'city', 'cstate', 'bstate', 'view', 'strive'];
 $optional = ['age', 'fstate', 'asia', 'africa', 'europe', 'cont', 'gov', 'life', 'eco', 'govdate', 'col'];
+$textAreas = ['life','eco'];
 
 // acceptable continent field names for the arrays to be copied and checked later
 $contArrays = ['asia', 'africa', 'europe'];
@@ -106,15 +107,23 @@ forEach($contArrays as $field) {
 // loop through the array containing radio fields and their option lists, then check if the field value of $formInput is within that list
 forEach($radios as $field => $options) {
     if(!in_array($formInput[$field], $options)) {
-        $errors[$field] = '"'.$formInput[$field].'" is not in the available options';
+        $errors[$field] = '"'.$formInput[$field].'" is not in the available options.';
     }   
+}
+
+// check if the text areas is over the character limits by its string length
+forEach($textAreas as $field) {
+    if(strlen($field) > 850) {
+        $errors[$field] = '"'.$formInput[$field].'" is over the character limit.';
+    }
 }
 
 
 // the following checks if it's a valid date, which is optional
+// using strtotime(), which returns false if it's not recognized as any kind of date
 if(!$formInput['govdate']==='') {
     if(!strtotime($formInput['govdate'])) {
-        $errors['govdate'] = '"govdate" must be a valid date';
+        $errors['govdate'] = '"govdate" must be a valid date.';
     }
 }
 
