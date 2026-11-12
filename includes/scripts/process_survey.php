@@ -18,13 +18,17 @@ $formInput = $_POST;
 
 $_SESSION['form_input'] = $formInput;
 
-
+// stores error messages for developers
 $errors = [];
+// stores error messages for users
+$warning = [];
 // fields by types: required and optional
 // these fields have to be validated
 $required = ['fname', 'lname', 'email', 'city', 'cstate', 'bstate', 'view', 'strive'];
 $optional = ['age', 'fstate', 'asia', 'africa', 'europe', 'cont', 'gov', 'life', 'eco', 'govdate', 'col'];
 $textAreas = ['life','eco'];
+
+$names = ["fname", "lname", "city", "cstate", "bstate", "fstate"];
 
 // acceptable continent field names for the arrays to be copied and checked later
 $contArrays = ['asia', 'africa', 'europe'];
@@ -76,12 +80,22 @@ forEach($required as $field) {
         $errors[$field] = '"'.$field.'" must exist.';
     } else if ($formInput[$field]==='') {
         $errors[$field] = '"'.$field.'" must not be blank.';
+        $warning[] = "Please answer the required questions.";
+    }
+}
+
+forEach ($names as $field) {
+    $string = (string)$formInput[$field];
+    if(!empty($string) && !ctype_alpha($string)) {
+        $errors[$field] = 'This field only accepts all letter strings.';
+        $warning[] = "Please enter a valid name without numbers or special characters";
     }
 }
 
 // validates the email using FILTER_VALIDATE_EMAIL default constant
 if (!filter_var($formInput['email'], FILTER_VALIDATE_EMAIL)){
     $errors['email'] = '"email" is not in a valid format';
+    $warning[] = "Your email is not in a correct format.";
 }
 
 // ctype_digit() checks if the string is all numerical digits
@@ -141,6 +155,7 @@ if(!empty($formInput['col'])) {
 
 
 $_SESSION['form_errors'] = $errors;
+$_SESSION['warning'] = $warning;
 $_SESSION['form_input'] = $formInput;
 
 //prettyDump($formInput);
