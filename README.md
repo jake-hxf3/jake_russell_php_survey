@@ -1,5 +1,5 @@
 # PHP Survey Webpage
-![insert alt text](images/example.jpg)
+![insert alt text](images/geo-about.jpg)
 
 
 ## Installation
