@@ -113,8 +113,8 @@ forEach($radios as $field => $options) {
 
 // check if the text areas is over the character limits by its string length
 forEach($textAreas as $field) {
-    if(strlen($field) > 850) {
-        $errors[$field] = '"'.$formInput[$field].'" is over the character limit.';
+    if(strlen($formInput[$field]) > 850) {
+        $errors[$field] = '"'.$field.'" is over the character limit.';
     }
 }
 
@@ -129,8 +129,8 @@ if(!$formInput['govdate']==='') {
 
 
 // validate if it's a valid color
-// use a regular expression to check for the string pattern that starts with #, then 6 numerical digits or letters from A-Z
-if(!preg_match_all('/#[a-f0-9]{6}/', $formInput['col'])) {
+// use a regular expression to find the string pattern that starts with #, then 6 numerical digits or letters from A-Z, then ends
+if(!preg_match('/^[#][a-f0-9]{6}$/', $formInput['col'])) {
     $errors['col'] = '"col" must be a hex number from #000000 to #ffffff.';
 }
 
