@@ -198,7 +198,7 @@ if (count($errors) === 0) {
     $message .= '<ul>';
     $message .= '<li>'.$viewSummary.'</li>';
     $message .= '<li>'.$striveSummary.'</li>';
-    if(!empty($gov)) {
+    if(!empty($gov) && ($gov !== 'Unknown')) {
         $message .= '<li> Your national government is: '.$gov.'</li>';
     }
     $message .= '</ul>';
@@ -207,6 +207,7 @@ if (count($errors) === 0) {
         $message .= '<p>You have a favorable view toward these countries</p>';
         $message .= '<ul>';
         forEach($inpArray as $field => $list) {
+            if(empty($list)) continue;
             $message .= '<li>From ';
             $message .= ucfirst($field);
             $message .= ': ';
@@ -216,12 +217,12 @@ if (count($errors) === 0) {
     }
     
     $message .= '</ul>';
-    $message .= '<p>Stay tuned for more Geobusters news $ activities!</p>';
+    $message .= '<p>Stay tuned for more Geobusters news & activities!</p>';
 
     
     
     //mail($to, $subject, $message);
-    //echo($message);
+    echo($message);
 }
 
 
@@ -229,4 +230,4 @@ if (count($errors) === 0) {
 //prettyDump($errors);
 
 // redirects to the main page
-header('Location: /jake_russell_php_survey/index.php');
+//header('Location: /jake_russell_php_survey/index.php');
