@@ -119,9 +119,9 @@ forEach($textAreas as $field) {
 }
 
 
-// the following checks if it's a valid date, which is optional
+// the following checks if it's a valid date, which is optional (can be blank)
 // using strtotime(), which returns false if it's not recognized as any kind of date
-if(!$formInput['govdate']==='') {
+if($formInput['govdate']!=='') {
     if(!strtotime($formInput['govdate'])) {
         $errors['govdate'] = '"govdate" must be a valid date.';
     }
