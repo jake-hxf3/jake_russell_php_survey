@@ -17,14 +17,14 @@ $_SESSION['warning'] = [];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/main.css" rel="stylesheet" type="text/css">
-    <link href="css/grid.css" rel="stylesheet" type="text/css">
-    <title>PHP Survey</title>
     <style>
-        .error {
-            color: red;
-        }
+        <?php 
+            // this is to link the CSS files into PHP
+            include "css/main.css";
+            include "css/grid.css"; 
+        ?>
     </style>
+    <title>PHP Survey</title>
 </head>
 <body>
     <header>
