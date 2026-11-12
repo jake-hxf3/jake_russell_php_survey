@@ -37,10 +37,17 @@ $countries = [
     'africa' => ['Algeria', 'Egypt', 'Nigeria', 'Ethiopia', 'Ghana', 'SouthAfrica', 'Tanzania', 'Morocco'],
     'europe' => ['UnitedKingdom', 'France', 'Germany', 'Hungary', 'Poland',  'Spain', 'Greece', 'Italy', 'Russia', 'Ukraine']
 ];
-// other factual arrays to validate against later
-$continents = ['Asia', 'Africa', 'Europe', 'NorthAmerica', 'SouthAmerica', 'Oceania', 'Antarctica'];
-$govs = ['PresidentalRepublic', 'SemiPresidentalRepublic', 'OnePartyState', 'ParliamentaryRepublic', 'ConstitutionalMonarchy', 'SemiConstitutionalMonarchy', 'AbsoluteMonarchy', 'Unknown'];
+
+// acceptable values for opinion radio fields
 $ops = ['yes', 'no', 'unknown'];
+// array of radio field options to validate against later
+$radios = [
+    'cont' => ['Asia', 'Africa', 'Europe', 'NorthAmerica', 'SouthAmerica', 'Oceania', 'Antarctica'],
+    'gov' => ['PresidentalRepublic', 'SemiPresidentalRepublic', 'OnePartyState', 'ParliamentaryRepublic', 'ConstitutionalMonarchy', 'SemiConstitutionalMonarchy', 'AbsoluteMonarchy', 'Unknown'],
+    'view' => $ops,
+    'strive' => $ops,
+];
+
 
 // they may insert or replace in a foreign field not existing here so this part of the function prevents this
 forEach($formInput as $field => $value) {
@@ -80,10 +87,17 @@ forEach($contArrays as $field) {
     forEach($inpArray[$field] as $country) {
         if(!in_array($country, $countries[$field])) {
             // log an error if the country name is not found in the sublist
-            $errors[$field] = '"'.$country.'" is not available.';            
+            $errors[$field] = '"'.$country.'" is not in the available list.';            
         }
     }
 }
+
+forEach($radios as $field => $options) {
+    if(!in_array($formInput[$field], $options)) {
+        $errors[$field] = '"'.$formInput[$field].'" is not in the available options';
+    }   
+}
+
 
 
 $_SESSION['form_errors'] = $errors;

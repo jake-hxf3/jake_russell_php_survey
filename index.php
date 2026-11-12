@@ -224,11 +224,11 @@
                 <label for="parl">Parliamentary Republic</label>                
             </div>
             <div>
-                <input id="cmon" name="gov" type="radio" value="Constitutional Monarchy">
+                <input id="cmon" name="gov" type="radio" value="ConstitutionalMonarchy">
                 <label for="cmon">Constitutional Monarchy</label>                
             </div>
             <div>
-                <input id="scmon" name="gov" type="radio" value="Semi-constitutional Monarchy">
+                <input id="scmon" name="gov" type="radio" value="SemiConstitutionalMonarchy">
                 <label for="scmon">Semi-constitutional Monarchy</label>                
             </div>
             <div>
