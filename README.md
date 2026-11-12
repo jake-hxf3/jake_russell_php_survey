@@ -1,6 +1,9 @@
 # PHP Survey Webpage
 ![insert alt text](images/example.jpg)
 
+This project is about implementing a geography survey questionnaire using PHP form techniques.
+It uses POST method and PHP functions to perform validation of data.
+
 
 ## Installation
 No installation required, simply download the zip file and extract.
