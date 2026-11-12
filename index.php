@@ -94,7 +94,7 @@ $_SESSION['warning'] = [];
                 <label for="pal">Palestine</label>
             </div>
             <div>
-                <input id="sar" name="asia[]" type="checkbox" value="SaudiArabia">
+                <input id="sar" name="asia[]" type="checkbox" value="Saudi Arabia">
                 <label for="sar">Saudi Arabia</label>
             </div>
             <div>
@@ -118,7 +118,7 @@ $_SESSION['warning'] = [];
                 <label for="jpn">Japan</label>
             </div>
             <div>
-                <input id="skr" name="asia[]" type="checkbox" value="SouthKorea">
+                <input id="skr" name="asia[]" type="checkbox" value="South Korea">
                 <label for="skr">South Korea</label>
             </div>
         </fieldset>
@@ -146,7 +146,7 @@ $_SESSION['warning'] = [];
                 <label for="ghn">Ghana</label>
             </div>
             <div>
-                <input id="saf" name="africa[]" type="checkbox" value="SouthAfrica">
+                <input id="saf" name="africa[]" type="checkbox" value="South Africa">
                 <label for="saf">South Africa</label>
             </div>
             <div>
@@ -162,7 +162,7 @@ $_SESSION['warning'] = [];
         <fieldset class="<?php errorStyle($errors, "europe")?>">
             <legend >Which ones of these European countries do you view the most favorably?</legend>
             <div>
-                <input id="bri" name="europe[]" type="checkbox" value="UnitedKingdom">
+                <input id="bri" name="europe[]" type="checkbox" value="United Kingdom">
                 <label for="bri">United Kingdom</label>
             </div>
             <div>
@@ -218,11 +218,11 @@ $_SESSION['warning'] = [];
                 <label for="europe">Europe</label>                
             </div>
             <div>
-                <input id="nAmerica" name="cont" type="radio" value="NorthAmerica">
+                <input id="nAmerica" name="cont" type="radio" value="North America">
                 <label for="nAmerica">North America</label>                
             </div>
             <div>
-                <input id="sAmerica" name="cont" type="radio" value="SouthAmerica">
+                <input id="sAmerica" name="cont" type="radio" value="South America">
                 <label for="sAmerica">South America</label>                
             </div>
             <div>
@@ -238,31 +238,31 @@ $_SESSION['warning'] = [];
         <fieldset class="<?php errorStyle($errors, "gov")?>">
             <legend >What government system is your country under?</legend>
             <div>
-                <input id="pres" name="gov" type="radio" value="PresidentalRepublic">
+                <input id="pres" name="gov" type="radio" value="Presidental Republic">
                 <label for="pres">Presidental Republic</label>                
             </div>
             <div>
-                <input id="spres" name="gov" type="radio" value="SemiPresidentalRepublic">
+                <input id="spres" name="gov" type="radio" value="Semi Presidental Republic">
                 <label for="spres">Semi-presidental Republic</label>                
             </div>
             <div>
-                <input id="opstate" name="gov" type="radio" value="OnePartyState">
+                <input id="opstate" name="gov" type="radio" value="One Party State">
                 <label for="opstate">One-party State</label>                
             </div>
             <div>
-                <input id="parl" name="gov" type="radio" value="ParliamentaryRepublic">
+                <input id="parl" name="gov" type="radio" value="Parliamentary Republic">
                 <label for="parl">Parliamentary Republic</label>                
             </div>
             <div>
-                <input id="cmon" name="gov" type="radio" value="ConstitutionalMonarchy">
+                <input id="cmon" name="gov" type="radio" value="Constitutional Monarchy">
                 <label for="cmon">Constitutional Monarchy</label>                
             </div>
             <div>
-                <input id="scmon" name="gov" type="radio" value="SemiConstitutionalMonarchy">
+                <input id="scmon" name="gov" type="radio" value="Semi Constitutional Monarchy">
                 <label for="scmon">Semi-constitutional Monarchy</label>                
             </div>
             <div>
-                <input id="amon" name="gov" type="radio" value="AbsoluteMonarchy">
+                <input id="amon" name="gov" type="radio" value="Absolute Monarchy">
                 <label for="amon">Absolute Monarchy</label>                
             </div>
             <div>
