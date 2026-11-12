@@ -17,11 +17,11 @@
             <legend>Tell us about yourself</legend>
             <div>
                 <label for="fname">First Name</label>
-                <input id="fname" name="fname" type="text">
+                <input id="fname" name="fname" type="text" autocomplete="on">
             </div>
             <div>
                 <label for="lname">Last Name</label>
-                <input id="lname" name="lname" type="text">
+                <input id="lname" name="lname" type="text" autocomplete="on">
             </div>
             <div>
                 <label for="age">Age</label>
@@ -29,23 +29,23 @@
             </div> 
             <div>
                 <label for="email">Email Address</label>
-                <input id="email" name="email" type="email">
+                <input id="email" name="email" type="email" autocomplete="on">
             </div> 
             <div>
                 <label for="city">Current City</label>
-                <input id="city" name="city" type="text">
+                <input id="city" name="city" type="text" autocomplete="on">
             </div>          
             <div>
                 <label for="cstate">Current State/Country</label>
-                <input id="cstate" name="cstate" type="text">
+                <input id="cstate" name="cstate" type="text" autocomplete="on">
             </div>         
             <div>
                 <label for="bstate">Country of Origin</label>
-                <input id="bstate" name="bstate" type="text">
+                <input id="bstate" name="bstate" type="text" autocomplete="on">
             </div>     
             <div>
                 <label for="fstate">Your favorite country (other than your own)</label>
-                <input id="fstate" name="fstate" type="text">
+                <input id="fstate" name="fstate" type="text" autocomplete="on">
             </div>     
         </fieldset>
 
