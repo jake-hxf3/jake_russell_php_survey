@@ -71,14 +71,19 @@ forEach($required as $field) {
     }
 }
 
-// loop through the continents' names, copy their respective countries into the respective key of the array of arrays
-// this also validates whether a field with a continent name has the array type or not
-/*forEach($contArrays as $field) {
+// loop through the continents' names as the keys
+forEach($contArrays as $field) {
+    // for each key, copy their respective countries from the field whose name is that key 
+    // add them into a sub-array of $inpArray by the respective continent key
     $inpArray[$field] = $formInput[$field] ?? [];
-    if (!is_array($inpArray[$field])) {
-        $errors[$field] = '"'.$field.'" must be an array.';
+    // then loop through this sub-array and check if a country name belongs to the available sublist of countries by this key
+    forEach($inpArray[$field] as $country) {
+        if(!in_array($country, $countries[$field])) {
+            // log an error if the country name is not found in the sublist
+            $errors[$field] = '"'.$country.'" is not available.';            
+        }
     }
-}*/
+}
 
 
 $_SESSION['form_errors'] = $errors;
