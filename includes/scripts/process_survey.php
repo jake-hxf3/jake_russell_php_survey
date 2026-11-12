@@ -78,6 +78,11 @@ forEach($required as $field) {
     }
 }
 
+
+if(!ctype_digit($formInput['age'])) {
+    $errors['age'] = '"age" must be an integer.';
+}
+
 // loop through the continents' names as the keys
 forEach($contArrays as $field) {
     // for each key, copy their respective countries from the field whose name is that key 
@@ -101,6 +106,7 @@ forEach($radios as $field => $options) {
 
 
 $_SESSION['form_errors'] = $errors;
+$_SESSION['form_input'] = $formInput;
 
 
 if (count($errors) === 0) {
