@@ -140,9 +140,5 @@ if(!preg_match('/^[#][a-f0-9]{6}$/', $formInput['col'])) {
 $_SESSION['form_errors'] = $errors;
 $_SESSION['form_input'] = $formInput;
 
-
-if (count($errors) === 0) {
-    prettyDump($formInput);
-} else {
-    prettyDump($errors);
-}
+// redirects to the main page
+header('Location: /jake_russell_php_survey/index.php');
