@@ -1,0 +1,9 @@
+@use '../abstracts' as A;
+
+:root {
+    font-size: clamp(12px, 2vw, 16px);
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

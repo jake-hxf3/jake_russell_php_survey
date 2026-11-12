@@ -1,7 +1,1 @@
-body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.error {
-    color: red;
-}
+.error{color:#d30000}:root{font-size:clamp(12px,2vw,16px)}body{font-family:Verdana,Geneva,Tahoma,sans-serif}/*# sourceMappingURL=main.css.map */
