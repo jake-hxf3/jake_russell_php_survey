@@ -78,9 +78,9 @@ forEach($required as $field) {
     }
 }
 
-
+// ctype_digit() checks if the string is all numerical digits
 if(!ctype_digit($formInput['age'])) {
-    $errors['age'] = '"age" must be an integer.';
+    $errors['age'] = '"age" must be an number.';
 }
 
 // loop through the continents' names as the keys
@@ -102,6 +102,13 @@ forEach($radios as $field => $options) {
         $errors[$field] = '"'.$formInput[$field].'" is not in the available options';
     }   
 }
+
+// the following checks if it's a valid color
+// use a regular expression to check for the string pattern that starts with #, then 6 numerical digits or letters from A-Z
+if(!preg_match_all('/#[a-f0-9]{6}/', $formInput['col'])) {
+    $errors['col'] = '"col" must be a hex number from #000000 to #ffffff.';
+}
+
 
 
 
