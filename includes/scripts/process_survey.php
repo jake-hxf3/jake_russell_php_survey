@@ -138,9 +138,15 @@ forEach($textAreas as $field) {
 
 // the following checks if it's a valid date, which is optional (can be blank)
 // using strtotime(), which returns false if it's not recognized as any kind of date
+$govdate = '';
 if(!empty($formInput['govdate'])) {
-    if(!strtotime($formInput['govdate'])) {
+    $govdate = strtotime($formInput['govdate']);
+    if(!$govdate) {
         $errors['govdate'] = '"govdate" must be a valid date.';
+    } else if ($govdate > time()) {
+        // check if the time value for $govdate is greater than that of current time, meaning it's in the future
+        $errors['govdate'] = '"govdate" must not be in the future.';
+        $warning[] = "Please enter a past date for your country's government establishment event";
     }
 }
 
@@ -230,4 +236,4 @@ if (count($errors) === 0) {
 //prettyDump($errors);
 
 // redirects to the main page
-//header('Location: /jake_russell_php_survey/index.php');
+header('Location: /jake_russell_php_survey/index.php');
