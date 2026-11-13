@@ -105,8 +105,9 @@ if (!filter_var($formInput['email'], FILTER_VALIDATE_EMAIL)){
 }
 
 // ctype_digit() checks if the string is all numerical digits
-if(!empty($formInput['age'])){
-    if(!ctype_digit($formInput['age'])) {
+$age = $formInput['age'] ?? '';
+if(!empty($age)){
+    if(!ctype_digit($age)) {
         $errors['age'] = '"age" must be a natural number.';
     }
 }
@@ -143,12 +144,12 @@ forEach($textAreas as $field) {
 
 // the following checks if it's a valid date, which is optional (can be blank)
 // using strtotime(), which returns false if it's not recognized as any kind of date
-$govdate = '';
-if(!empty($formInput['govdate'])) {
-    $govdate = strtotime($formInput['govdate']);
-    if(!$govdate) {
+$govdate = $formInput['govdate'] ?? '';
+if(!empty($govdate)) {
+    $testdate = strtotime($formInput['govdate']);
+    if(!$testdate) {
         $errors['govdate'] = '"govdate" must be a valid date.';
-    } else if ($govdate > time()) {
+    } else if ($testdate > time()) {
         // check if the time value for $govdate is greater than that of current time, meaning it's in the future
         $errors['govdate'] = '"govdate" must not be in the future.';
         $warning[] = "Please enter a past date for your country's government establishment event";
@@ -158,8 +159,9 @@ if(!empty($formInput['govdate'])) {
 
 // validate if it's a valid color
 // use a regular expression to find the string pattern that starts with #, then 6 numerical digits or letters from A-Z, then ends
-if(!empty($formInput['col'])) {
-    if(!preg_match('/^[#][a-f0-9]{6}$/', $formInput['col'])) {
+$col = $formInput['col'] ?? '';
+if(!empty($col)) {
+    if(!preg_match('/^[#][a-f0-9]{6}$/', $col)) {
         $errors['col'] = '"col" must be a hex number from #000000 to #ffffff.';
     }
 }
@@ -204,7 +206,9 @@ if (count($errors) === 0) {
 
     $message .= '<h1>Thanks for Participating Our Survey</h1>';
     $message .= '<p><i>Greetings, '.$fname.'</i></p>';
-    $message .= '<p>from '.$ccity.', '.$cstate;
+    $message .= '<p>Currently ';
+    if(!empty($age)) $message .= $age.' ';
+    $message .= 'from '.$ccity.', '.$cstate;
     $message .= ', '.$cont;
     $message .= '</p>';
     $message .= '<p>Your geopolitical viewpoint has been recorded and listened.</p>';
@@ -215,6 +219,8 @@ if (count($errors) === 0) {
     if(!empty($gov) && ($gov !== 'Unknown')) {
         $message .= '<li> Your national government is: '.$gov.'</li>';
     }
+    if(!empty($govdate)) $message .= '<li> It was established on: '.$govdate.'</li>';
+    if(!empty($col)) $message .= '<li style="color:'.$col.'"> You would color your favorite country with: '.$col.'</li>';
     $message .= '</ul>';
 
     if(!empty($inpArray)) {
