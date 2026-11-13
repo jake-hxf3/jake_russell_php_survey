@@ -29,7 +29,7 @@ $_SESSION['warning'] = [];
 <body id="survey">
     <header id="main-header">
         <section id="hero" class="grid-con">
-            <h1 class="col-span-full m-col-span-7">Welcome to the GeoBusters Survey</h1>            
+            <h1 class="col-span-full">Welcome to the<br>GeoBusters Survey</h1>            
         </section>
 
         <div id="header-nav" class="grid-con">
@@ -57,8 +57,8 @@ $_SESSION['warning'] = [];
         ?>
     </p>
     
-    <form action="includes/scripts/process_survey.php" method="POST">
-        <fieldset>
+    <form id="survey-form" action="includes/scripts/process_survey.php" method="POST">
+        <fieldset id="step1">
             <legend>Tell us about yourself</legend>
             <p>(*) are required</p>
             <div>
@@ -93,12 +93,9 @@ $_SESSION['warning'] = [];
                 <label for="fstate" class="<?php errorStyle($errors, "fstate")?>">Your favorite country (other than your own)</label>
                 <input id="fstate" name="fstate" type="text" autocomplete="on">
             </div>     
-            <div>
-                <p>(*) are required</p>
-            </div>
         </fieldset>
 
-        <fieldset class="<?php errorStyle($errors, "asia")?>">
+        <fieldset id="step2" class="<?php errorStyle($errors, "asia")?>">
             <legend>Which ones of these Asian countries do you view the most favorably?</legend>
             <div>
                 <input id="afg" name="asia[]" type="checkbox" value="Afghanistan">
@@ -142,7 +139,7 @@ $_SESSION['warning'] = [];
             </div>
         </fieldset>
 
-        <fieldset class="<?php errorStyle($errors, "africa")?>">
+        <fieldset id="step3" class="<?php errorStyle($errors, "africa")?>">
             <legend>Which ones of these African countries do you view the most favorably?</legend>
             <div>
                 <input id="alg" name="africa[]" type="checkbox" value="Alegria">
@@ -178,7 +175,7 @@ $_SESSION['warning'] = [];
             </div>
         </fieldset>
 
-        <fieldset class="<?php errorStyle($errors, "europe")?>">
+        <fieldset id="step4" class="<?php errorStyle($errors, "europe")?>">
             <legend >Which ones of these European countries do you view the most favorably?</legend>
             <div>
                 <input id="bri" name="europe[]" type="checkbox" value="United Kingdom">
@@ -222,7 +219,7 @@ $_SESSION['warning'] = [];
             </div>
         </fieldset>
 
-        <fieldset class="<?php errorStyle($errors, "cont")?>">
+        <fieldset id="step5" class="<?php errorStyle($errors, "cont")?>">
             <legend>Which continent are you living in right now?</legend>
             <div>
                 <input id="asia" name="cont" type="radio" value="Asia">
@@ -254,7 +251,7 @@ $_SESSION['warning'] = [];
             </div>
         </fieldset>
 
-        <fieldset class="<?php errorStyle($errors, "gov")?>">
+        <fieldset id="step6" class="<?php errorStyle($errors, "gov")?>">
             <legend >What government system is your country under?</legend>
             <div>
                 <input id="pres" name="gov" type="radio" value="Presidental Republic">
@@ -290,7 +287,7 @@ $_SESSION['warning'] = [];
             </div>
         </fieldset>
 
-        <fieldset class="<?php errorStyle($errors, "view")?>">
+        <fieldset id="step7" class="<?php errorStyle($errors, "view")?>">
             <legend>Do you view your own country favorably?</legend>
             <div>
                 <input id="yview" name="view" type="radio" value="yes">
@@ -306,7 +303,7 @@ $_SESSION['warning'] = [];
             </div>
         </fieldset>
 
-        <fieldset class="<?php errorStyle($errors, "strive")?>">
+        <fieldset id="step8" class="<?php errorStyle($errors, "strive")?>">
             <legend >Do you think your country should strive to be economically developed?</legend>
             <div>
                 <input id="ystrive" name="strive" type="radio" value="yes">
@@ -322,7 +319,7 @@ $_SESSION['warning'] = [];
             </div>
         </fieldset>
 
-        <fieldset>
+        <fieldset id="step9">
             <legend>Let us know your opinions</legend>
             <div>
                 <label for="life">Can you share about the current life condition of citizens from your nation?</label>
@@ -334,7 +331,7 @@ $_SESSION['warning'] = [];
             </div>
         </fieldset>
         
-        <fieldset>
+        <fieldset id="step10">
             <legend>Trivias</legend>
             <div>
                 <label for="govdate">When was your country's modern government established?</label>
@@ -354,6 +351,9 @@ $_SESSION['warning'] = [];
         <p>©2026 GEOBUSTERS, gmbh</p>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
     <script src="main.js"></script>
 </body>
 </html>
