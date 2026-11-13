@@ -36,6 +36,7 @@ $_SESSION['warning'] = [];
             <div id="main-logo" class="col-span-1 m-col-span-2">
                 GEOBUSTERS
             </div>
+            <button id="burger" aria-label="toggle mobile menu" class=" col-start-4 col-end-5">≡</button>
             <nav class="col-span-full m-col-start-3 m-col-end-13">
                 <h2 class="hidden">Main Navigation</h2>
                 <ul>
@@ -344,7 +345,7 @@ $_SESSION['warning'] = [];
         </fieldset>
 
         <div class="grid-con">
-            <button type="submit" class="col-span-full m-col-start-4 m-col-end-7">Submit</button>
+            <button type="submit" class="col-start-2 col-end-4 m-col-start-4 m-col-end-7">Submit</button>
         </div>
         
     </form>
@@ -357,6 +358,6 @@ $_SESSION['warning'] = [];
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
-    <script src="main.js"></script>
+    <script type="text/javascript" src="/jake_russell_php_survey/main.js"></script>
 </body>
 </html>
