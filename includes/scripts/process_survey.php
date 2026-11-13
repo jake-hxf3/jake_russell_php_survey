@@ -20,6 +20,9 @@ $_SESSION['form_input'] = $formInput;
 
 // stores error messages for developers
 $errors = [];
+// record if it's successfully sent
+$success = false;
+$_SESSION['sent'] = $success;
 // stores error messages for users
 $warning = [];
 // fields by types: required and optional
@@ -167,6 +170,9 @@ $_SESSION['warning'] = $warning;
 $_SESSION['form_input'] = $formInput;
 
 if (count($errors) === 0) {
+    $success = true;
+    $_SESSION['sent'] = $success;
+
     $email = $formInput['email'];
     $fname = $formInput['fname'];
     $lname = $formInput['lname'];
