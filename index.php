@@ -26,10 +26,10 @@ $_SESSION['warning'] = [];
     </style>
     <title>GEOBUSTERS Survey</title>
 </head>
-<body>
+<body id="survey">
     <header id="main-header">
         <section id="hero" class="grid-con">
-            <h1 class="col-span-full">Welcome to the GeoBusters Survey</h1>            
+            <h1 class="col-span-full m-col-span-7">Welcome to the GeoBusters Survey</h1>            
         </section>
 
         <div id="header-nav" class="grid-con">
@@ -60,6 +60,7 @@ $_SESSION['warning'] = [];
     <form action="includes/scripts/process_survey.php" method="POST">
         <fieldset>
             <legend>Tell us about yourself</legend>
+            <p>(*) are required</p>
             <div>
                 <label for="fname" class="<?php errorStyle($errors, "fname")?>">First Name*</label>
                 <input id="fname" name="fname" type="text" autocomplete="on">
