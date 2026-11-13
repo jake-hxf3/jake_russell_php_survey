@@ -27,7 +27,7 @@ $warning = [];
 $required = ['fname', 'lname', 'email', 'city', 'cstate', 'bstate', 'view', 'strive'];
 $optional = ['age', 'fstate', 'asia', 'africa', 'europe', 'cont', 'gov', 'life', 'eco', 'govdate', 'col'];
 $textAreas = ['life','eco'];
-
+// these fields only accept short strings of names
 $names = ["fname", "lname", "city", "cstate", "bstate", "fstate"];
 
 // acceptable continent field names for the arrays to be copied and checked later
@@ -89,6 +89,8 @@ forEach ($names as $field) {
     if(!empty($string) && !ctype_alpha($string)) {
         $errors[$field] = 'This field only accepts all letter strings.';
         $warning[] = "Please enter a valid name without numbers or special characters";
+    } else if(strlen($string) > 70) {
+        $errors[$field] = '"'.$field.'" is off character limits.';     
     }
 }
 
