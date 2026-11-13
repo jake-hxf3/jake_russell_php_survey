@@ -109,43 +109,43 @@ if($success) {
             <legend class="col-span-full">Which ones of these Asian countries do you view the most favorably?</legend>
             <div>
                 <input id="afg" name="asia[]" type="checkbox" value="Afghanistan">
-                <label for="afg">Afghanistan</label>
+                <label for="afg">🇦🇫 Afghanistan</label>
             </div>
             <div>
                 <input id="isr" name="asia[]" type="checkbox" value="Israel">
-                <label for="isr">Israel</label>
+                <label for="isr">🇮🇱 Israel</label>
             </div>
             <div>
                 <input id="pal" name="asia[]" type="checkbox" value="Palestine">
-                <label for="pal">Palestine</label>
+                <label for="pal">🇵🇸 Palestine</label>
             </div>
             <div>
                 <input id="sar" name="asia[]" type="checkbox" value="Saudi Arabia">
-                <label for="sar">Saudi Arabia</label>
+                <label for="sar">🇸🇦 Saudi Arabia</label>
             </div>
             <div>
                 <input id="pak" name="asia[]" type="checkbox" value="Pakistan">
-                <label for="pak">Pakistan</label>
+                <label for="pak">🇵🇰 Pakistan</label>
             </div>
             <div>
                 <input id="ind" name="asia[]" type="checkbox" value="India">
-                <label for="ind">India</label>
+                <label for="ind">🇮🇳 India</label>
             </div>
             <div>
                 <input id="chn" name="asia[]" type="checkbox" value="China">
-                <label for="chn">China</label>
+                <label for="chn">🇨🇳 China</label>
             </div>
             <div>
                 <input id="tha" name="asia[]" type="checkbox" value="Thailand">
-                <label for="tha">Thailand</label>
+                <label for="tha">🇹🇭 Thailand</label>
             </div>
             <div>
                 <input id="jpn" name="asia[]" type="checkbox" value="Japan">
-                <label for="jpn">Japan</label>
+                <label for="jpn">🇯🇵 Japan</label>
             </div>
             <div>
                 <input id="skr" name="asia[]" type="checkbox" value="South Korea">
-                <label for="skr">South Korea</label>
+                <label for="skr">🇰🇷 South Korea</label>
             </div>
         </fieldset>
 
@@ -153,35 +153,35 @@ if($success) {
             <legend class="col-span-full">Which ones of these African countries do you view the most favorably?</legend>
             <div>
                 <input id="alg" name="africa[]" type="checkbox" value="Alegria">
-                <label for="alg">Algeria</label>
+                <label for="alg">🇩🇿 Algeria</label>
             </div>
             <div>
                 <input id="egy" name="africa[]" type="checkbox" value="Egypt">
-                <label for="egy">Egypt</label>
+                <label for="egy">🇪🇬 Egypt</label>
             </div>
             <div>
                 <input id="nig" name="africa[]" type="checkbox" value="Nigeria">
-                <label for="nig">Nigeria</label>
+                <label for="nig">🇳🇬 Nigeria</label>
             </div>
             <div>
                 <input id="etp" name="africa[]" type="checkbox" value="Ethiopia">
-                <label for="etp">Ethiopia</label>
+                <label for="etp">🇪🇹 Ethiopia</label>
             </div>
             <div>
                 <input id="ghn" name="africa[]" type="checkbox" value="Ghana">
-                <label for="ghn">Ghana</label>
+                <label for="ghn">🇬🇭 Ghana</label>
             </div>
             <div>
                 <input id="saf" name="africa[]" type="checkbox" value="South Africa">
-                <label for="saf">South Africa</label>
+                <label for="saf">🇿🇦 South Africa</label>
             </div>
             <div>
                 <input id="tzn" name="africa[]" type="checkbox" value="Tanzania">
-                <label for="tzn">Tanzania</label>
+                <label for="tzn">🇹🇿 Tanzania</label>
             </div>
             <div>
                 <input id="mrc" name="africa[]" type="checkbox" value="Morocco">
-                <label for="mrc">Morocco</label>
+                <label for="mrc">🇲🇦 Morocco</label>
             </div>
         </fieldset>
 
@@ -189,43 +189,43 @@ if($success) {
             <legend class="col-span-full">Which ones of these European countries do you view the most favorably?</legend>
             <div>
                 <input id="bri" name="europe[]" type="checkbox" value="United Kingdom">
-                <label for="bri">United Kingdom</label>
+                <label for="bri">🇬🇧 United Kingdom</label>
             </div>
             <div>
                 <input id="fra" name="europe[]" type="checkbox" value="France">
-                <label for="fra">France</label>
+                <label for="fra">🇫🇷 France</label>
             </div>
             <div>
                 <input id="ger" name="europe[]" type="checkbox" value="Germany">
-                <label for="ger">Germany</label>
+                <label for="ger">🇩🇪 Germany</label>
             </div>
             <div>
                 <input id="hun" name="europe[]" type="checkbox" value="Hungary">
-                <label for="bri">Hungary</label>
+                <label for="bri">🇭🇺 Hungary</label>
             </div>
             <div>
                 <input id="pol" name="europe[]" type="checkbox" value="Poland">
-                <label for="bri">Poland</label>
+                <label for="bri">🇵🇱 Poland</label>
             </div>
             <div>
                 <input id="spa" name="europe[]" type="checkbox" value="Spain">
-                <label for="spa">Spain</label>
+                <label for="spa">🇪🇸 Spain</label>
             </div>
             <div>
                 <input id="gre" name="europe[]" type="checkbox" value="Greece">
-                <label for="gre">Greece</label>
+                <label for="gre">🇬🇷 Greece</label>
             </div>
             <div>
                 <input id="ita" name="europe[]" type="checkbox" value="Italy">
-                <label for="bri">Italy</label>
+                <label for="bri">🏛️ Italy</label>
             </div>
             <div>
                 <input id="rus" name="europe[]" type="checkbox" value="Russia">
-                <label for="bri">Russia</label>
+                <label for="bri">🇷🇺 Russia</label>
             </div>
             <div>
                 <input id="ukr" name="europe[]" type="checkbox" value="Ukraine">
-                <label for="ukr">Ukraine</label>
+                <label for="ukr">🇺🇦 Ukraine</label>
             </div>
         </fieldset>
 
