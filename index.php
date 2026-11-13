@@ -24,11 +24,29 @@ $_SESSION['warning'] = [];
             include "css/grid.css"; 
         ?>
     </style>
-    <title>PHP Survey</title>
+    <title>GEOBUSTERS Survey</title>
 </head>
 <body>
-    <header>
-        <h1>Welcome to the GeoBuster Survey</h1>
+    <header class="full-width-grid-con">
+        <section id="hero" class="col-start-2 col-end-3 center-grid-con">
+            <h1>Welcome to the GeoBusters Survey</h1>            
+        </section>
+
+        <div id="header-nav" class="col-start-2 col-end-3 center-grid-con">
+            <div id="main-logo">
+                GEOBUSTERS
+            </div>
+            <nav>
+                <h2 class="hidden">Main Navigation</h2>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Learn</a></li>
+                    <li><a href="#">Quizzes</a></li>
+                    <li><a href="#">Games</a></li>
+                    <li><a href="#">Contacts</a></li>
+                </ul>                
+            </nav>
+        </div>
     </header>
 
     <input type="hidden" value="<?php errorCountReset($errors); ?>">
@@ -329,6 +347,11 @@ $_SESSION['warning'] = [];
 
         <button type="submit">Send</button>
     </form>
+
+    <footer>
+        <h2 class="hidden">Main Footer</h2>
+        <p>©2026 GEOBUSTERS, gmbh</p>
+    </footer>
 
     <script src="main.js"></script>
 </body>
