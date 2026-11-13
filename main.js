@@ -48,6 +48,7 @@
     function turnErrorsOff(e) {
         let input = e.target;
         console.log(input.id);
+        input.classList.remove("error");
         // when focus on an input, its associated fieldset or label should remove the error styling class
         let parent = input.closest(".error"); // fieldsets
         if(parent) {
