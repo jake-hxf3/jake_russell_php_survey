@@ -22,7 +22,7 @@
     const fadeIn2 = {
         duration: 0.5,
         autoAlpha: 0,
-        ease: "power1.out",
+        ease: "power2.out",
         y: "-5vh",
     };
 
