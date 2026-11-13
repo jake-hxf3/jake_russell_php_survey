@@ -354,7 +354,7 @@ if($success) {
         </fieldset>
 
         <div class="grid-con">
-            <button type="submit" class="col-start-2 col-end-4 m-col-start-4 m-col-end-7">Submit</button>
+            <button type="submit" aria-label="Submit your answers" class="col-start-2 col-end-4 m-col-start-4 m-col-end-7">Submit</button>
         </div>
         
     </form>
