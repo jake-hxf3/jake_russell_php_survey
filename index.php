@@ -333,11 +333,11 @@ if($success) {
             <legend class="col-span-full">Let us know your opinions</legend>
             <div class="col-span-full m-col-start-1 m-col-end-9">
                 <label for="life">Can you share about the current life condition of citizens from your nation?</label>
-                <textarea id="life" name="life" maxlength="850" placeholder="Write more here..." class="<?php errorStyle($errors, "life")?>"  value="<?php showLastInput($submittedInputs, 'life')?>"></textarea>
+                <textarea id="life" name="life" maxlength="850" placeholder="Write more here..." class="<?php errorStyle($errors, "life")?>"><?php showLastInput($submittedInputs, 'life')?></textarea>
             </div>
             <div class="col-span-full m-col-start-5 m-col-end-13">
                 <label for="eco">Do you think that a more developed economy guarantees better life condition? Why?</label>
-                <textarea id="eco" name="eco" maxlength="850" placeholder="Write more here..." class="<?php errorStyle($errors, "eco")?>  value="<?php showLastInput($submittedInputs, 'eco')?>""></textarea>
+                <textarea id="eco" name="eco" maxlength="850" placeholder="Write more here..." class="<?php errorStyle($errors, "eco")?>"><?php showLastInput($submittedInputs, 'eco')?></textarea>
             </div>
         </fieldset>
         
@@ -348,7 +348,7 @@ if($success) {
                 <input id="govdate" name="govdate" type="date" class="col-span-2 m-col-start-1 m-col-end-7 <?php errorStyle($errors, "govdate")?>">
             </div>
             <div class="col-span-full subgrid-con">
-                <label for="col" class="col-span-2 m-col-start-4 m-col-end-8">If you paint a world map, what would be the color of favorite country? It may or may not be your own, nor it has to be the dominant flag color.</label>
+                <label for="col" class="col-span-2 m-col-start-4 m-col-end-8">If you paint a world map, what would be the color of your favorite country? It may or may not be your own, nor it has to be the dominant flag color.</label>
                 <input id="col" name="col" type="color" value="#888888" class="m-col-span-3 <?php errorStyle($errors, "govdate")?>">
             </div>
         </fieldset>
