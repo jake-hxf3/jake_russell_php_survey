@@ -27,7 +27,7 @@ $_SESSION['warning'] = [];
     <title>GEOBUSTERS Survey</title>
 </head>
 <body>
-    <header>
+    <header id="main-header">
         <section id="hero" class="grid-con">
             <h1 class="col-span-full">Welcome to the GeoBusters Survey</h1>            
         </section>
@@ -348,7 +348,7 @@ $_SESSION['warning'] = [];
         <button type="submit">Send</button>
     </form>
 
-    <footer>
+    <footer id="main-footer">
         <h2 class="hidden">Main Footer</h2>
         <p>©2026 GEOBUSTERS, gmbh</p>
     </footer>
