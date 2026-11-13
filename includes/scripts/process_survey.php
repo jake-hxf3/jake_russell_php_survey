@@ -158,7 +158,7 @@ if(!empty($govdate)) {
 
 
 // validate if it's a valid color
-// use a regular expression to find the string pattern that starts with #, then 6 numerical digits or letters from A-Z, then ends
+// use a regular expression to find the string pattern that starts with #, then 6 numerical digits or letters from A-F, then ends
 $col = $formInput['col'] ?? '';
 if(!empty($col)) {
     if(!preg_match('/^[#][a-f0-9]{6}$/', $col)) {
