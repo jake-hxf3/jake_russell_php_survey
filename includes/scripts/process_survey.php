@@ -235,8 +235,8 @@ if (count($errors) === 0) {
 
     
     
-    //mail($to, $subject, $message);
-    echo($message);
+    mail($to, $subject, $message);
+    //echo($message);
 }
 
 
