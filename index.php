@@ -27,16 +27,17 @@ $_SESSION['warning'] = [];
     <title>GEOBUSTERS Survey</title>
 </head>
 <body>
-    <header class="full-width-grid-con">
-        <section id="hero" class="col-start-2 col-end-3 center-grid-con">
-            <h1>Welcome to the GeoBusters Survey</h1>            
+    <header>
+        <section id="hero" class="grid-con">
+
+            <h1 class="col-span-full">Welcome to the GeoBusters Survey</h1>            
         </section>
 
-        <div id="header-nav" class="col-start-2 col-end-3 center-grid-con">
-            <div id="main-logo">
+        <div id="header-nav" class="grid-con">
+            <div id="main-logo" class="col-span-1">
                 GEOBUSTERS
             </div>
-            <nav>
+            <nav class="col-span-full m-col-start-8 m-col-end-13">
                 <h2 class="hidden">Main Navigation</h2>
                 <ul>
                     <li><a href="#">Home</a></li>
