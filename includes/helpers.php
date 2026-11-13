@@ -29,4 +29,12 @@ function errorStyle(array &$errors, string $name) {
     }
 }
 
+
+// this one will keep the entered value if submitted incorrectly
+function showLastInput(array &$record, string $field) {
+    if(isset($record[$field])) {
+        echo $record[$field];
+    }
+}
+
 ?>

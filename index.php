@@ -6,6 +6,7 @@ require_once __DIR__ . '/includes/helpers.php';
 
 // save these variables from the session once the process form is done
 // these variables will be used to display messages
+$success = $_SESSION['sent'] ?? false;
 $errors = $_SESSION['form_errors'] ?? [];
 $warning = $_SESSION['warning'];
 $submittedInputs = $_SESSION['form_input'] ?? [];
@@ -14,6 +15,11 @@ $submittedInputs = $_SESSION['form_input'] ?? [];
 $_SESSION['form_input'] = [];
 $_SESSION['form_errors'] = [];
 $_SESSION['warning'] = [];
+
+// erase submitted inputs if sent
+if($success) {
+    $submittedInputs = [];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -67,35 +73,35 @@ $_SESSION['warning'] = [];
 
             <div class="col-start-1 col-end-4 m-col-start-1 m-col-end-6">
                 <label for="fname" class="<?php errorStyle($errors, "fname")?>">First Name*</label>
-                <input id="fname" name="fname" maxlength="70" type="text" autocomplete="on">
+                <input id="fname" name="fname" maxlength="70" type="text" autocomplete="on" value="<?php showLastInput($submittedInputs, 'fname')?>">
             </div>
             <div class="col-start-2 col-end-5 m-col-start-6 m-col-end-11">
                 <label for="lname" class="<?php errorStyle($errors, "lname")?>">Last Name*</label>
-                <input id="lname" name="lname" maxlength="70" type="text" autocomplete="on">
+                <input id="lname" name="lname" maxlength="70" type="text" autocomplete="on" value="<?php showLastInput($submittedInputs, 'lname')?>">
             </div>
             <div class="col-start-1 col-end-4 m-col-start-3 m-col-end-5">
                 <label for="age" class="<?php errorStyle($errors, "age")?>">Age</label>
-                <input id="age" name="age" type="number" min="0" max="123">
+                <input id="age" name="age" type="number" min="0" max="123"  value="<?php showLastInput($submittedInputs, 'age')?>">
             </div> 
             <div class="col-start-2 col-end-5 m-col-start-5 m-col-end-12">
                 <label for="email" class="<?php errorStyle($errors, "email")?>">Email Address*</label>
-                <input id="email" name="email" type="email" autocomplete="on" placeholder="name@email.com">
+                <input id="email" name="email" type="email" autocomplete="on" placeholder="name@email.com" value="<?php showLastInput($submittedInputs, 'email')?>">
             </div> 
             <div class="col-start-1 col-end-4 m-col-start-1 m-col-end-6">
                 <label for="city" class="<?php errorStyle($errors, "city")?>">Current City*</label>
-                <input id="city" name="city" maxlength="70" type="text" autocomplete="on">
+                <input id="city" name="city" maxlength="70" type="text" autocomplete="on" value="<?php showLastInput($submittedInputs, 'city')?>">
             </div>          
             <div class="col-start-2 col-end-5 m-col-start-6 m-col-end-11">
                 <label for="cstate" class="<?php errorStyle($errors, "cstate")?>">Current State/Country*</label>
-                <input id="cstate" name="cstate" maxlength="70" type="text" autocomplete="on">
+                <input id="cstate" name="cstate" maxlength="70" type="text" autocomplete="on" value="<?php showLastInput($submittedInputs, 'cstate')?>">
             </div>         
             <div class="col-start-1 col-end-4 m-col-start-2 m-col-end-7">
                 <label for="bstate" class="<?php errorStyle($errors, "bstate")?>">Country of Origin*</label>
-                <input id="bstate" name="bstate" maxlength="70" type="text" autocomplete="on">
+                <input id="bstate" name="bstate" maxlength="70" type="text" autocomplete="on" value="<?php showLastInput($submittedInputs, 'bstate')?>">
             </div>     
             <div class="col-start-2 col-end-5 m-col-start-7 m-col-end-12">
                 <label for="fstate" class="<?php errorStyle($errors, "fstate")?>">Your favorite country (other than your own)</label>
-                <input id="fstate" name="fstate" maxlength="70" type="text" autocomplete="on">
+                <input id="fstate" name="fstate" maxlength="70" type="text" autocomplete="on" value="<?php showLastInput($submittedInputs, 'fstate')?>">
             </div>     
         </fieldset>
 
@@ -327,11 +333,11 @@ $_SESSION['warning'] = [];
             <legend class="col-span-full">Let us know your opinions</legend>
             <div class="col-span-full m-col-start-1 m-col-end-9">
                 <label for="life">Can you share about the current life condition of citizens from your nation?</label>
-                <textarea id="life" name="life" maxlength="850" placeholder="Write more here..." class="<?php errorStyle($errors, "life")?>"></textarea>
+                <textarea id="life" name="life" maxlength="850" placeholder="Write more here..." class="<?php errorStyle($errors, "life")?>"  value="<?php showLastInput($submittedInputs, 'life')?>"></textarea>
             </div>
             <div class="col-span-full m-col-start-5 m-col-end-13">
                 <label for="eco">Do you think that a more developed economy guarantees better life condition? Why?</label>
-                <textarea id="eco" name="eco" maxlength="850" placeholder="Write more here..." class="<?php errorStyle($errors, "eco")?>"></textarea>
+                <textarea id="eco" name="eco" maxlength="850" placeholder="Write more here..." class="<?php errorStyle($errors, "eco")?>  value="<?php showLastInput($submittedInputs, 'eco')?>""></textarea>
             </div>
         </fieldset>
         
