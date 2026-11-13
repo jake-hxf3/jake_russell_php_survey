@@ -67,11 +67,11 @@ $_SESSION['warning'] = [];
 
             <div class="col-start-1 col-end-4 m-col-start-1 m-col-end-6">
                 <label for="fname" class="<?php errorStyle($errors, "fname")?>">First Name*</label>
-                <input id="fname" name="fname" type="text" autocomplete="on">
+                <input id="fname" name="fname" maxlength="70" type="text" autocomplete="on">
             </div>
             <div class="col-start-2 col-end-5 m-col-start-6 m-col-end-11">
                 <label for="lname" class="<?php errorStyle($errors, "lname")?>">Last Name*</label>
-                <input id="lname" name="lname" type="text" autocomplete="on">
+                <input id="lname" name="lname" maxlength="70" type="text" autocomplete="on">
             </div>
             <div class="col-start-1 col-end-4 m-col-start-3 m-col-end-5">
                 <label for="age" class="<?php errorStyle($errors, "age")?>">Age</label>
@@ -83,19 +83,19 @@ $_SESSION['warning'] = [];
             </div> 
             <div class="col-start-1 col-end-4 m-col-start-1 m-col-end-6">
                 <label for="city" class="<?php errorStyle($errors, "city")?>">Current City*</label>
-                <input id="city" name="city" type="text" autocomplete="on">
+                <input id="city" name="city" maxlength="70" type="text" autocomplete="on">
             </div>          
             <div class="col-start-2 col-end-5 m-col-start-6 m-col-end-11">
                 <label for="cstate" class="<?php errorStyle($errors, "cstate")?>">Current State/Country*</label>
-                <input id="cstate" name="cstate" type="text" autocomplete="on">
+                <input id="cstate" name="cstate" maxlength="70" type="text" autocomplete="on">
             </div>         
             <div class="col-start-1 col-end-4 m-col-start-2 m-col-end-7">
                 <label for="bstate" class="<?php errorStyle($errors, "bstate")?>">Country of Origin*</label>
-                <input id="bstate" name="bstate" type="text" autocomplete="on">
+                <input id="bstate" name="bstate" maxlength="70" type="text" autocomplete="on">
             </div>     
             <div class="col-start-2 col-end-5 m-col-start-7 m-col-end-12">
                 <label for="fstate" class="<?php errorStyle($errors, "fstate")?>">Your favorite country (other than your own)</label>
-                <input id="fstate" name="fstate" type="text" autocomplete="on">
+                <input id="fstate" name="fstate" maxlength="70" type="text" autocomplete="on">
             </div>     
         </fieldset>
 
