@@ -30,7 +30,6 @@ $_SESSION['warning'] = [];
     <header>
         <section id="hero" class="grid-con">
             <h1 class="col-span-full">Welcome to the GeoBusters Survey</h1>            
-            <img src="images/geo-map.jpg" class="col-span-full" alt="">
         </section>
 
         <div id="header-nav" class="grid-con">
