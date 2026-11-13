@@ -78,6 +78,8 @@ body, p, h1, h2, h3, h4, h5 {
 }
 
  .center-grid-con {
+   display: grid;
+   grid-template-columns: repeat(4, minmax(0, 1fr));
    margin: 0 auto;
    max-width: 1200px;
    padding-left: 15px;

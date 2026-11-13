@@ -17,70 +17,87 @@ $_SESSION['warning'] = [];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/main.css" rel="stylesheet" type="text/css">
-    <link href="css/grid.css" rel="stylesheet" type="text/css">
-    <title>PHP Survey</title>
     <style>
-        .error {
-            color: red;
-        }
+        <?php 
+            // this is to link the CSS files into PHP
+            include "css/main.css";
+            include "css/grid.css"; 
+        ?>
     </style>
+    <title>GEOBUSTERS Survey</title>
 </head>
-<body>
-    <header>
-        <h1>Welcome to the GeoBuster Survey</h1>
+<body id="survey">
+    <header id="main-header">
+        <section id="hero" class="grid-con">
+            <h1 class="col-span-full">Welcome to the<br>GeoBusters Survey</h1>            
+        </section>
+
+        <div id="header-nav" class="grid-con">
+            <div id="main-logo" class="col-span-1 m-col-span-2">
+                <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 3.03v.568c0 .334.148.65.405.864l1.068.89c.442.369.535 1.01.216 1.49l-.51.766a2.25 2.25 0 0 1-1.161.886l-.143.048a1.107 1.107 0 0 0-.57 1.664c.369.555.169 1.307-.427 1.605L9 13.125l.423 1.059a.956.956 0 0 1-1.652.928l-.679-.906a1.125 1.125 0 0 0-1.906.172L4.5 15.75l-.612.153M12.75 3.031a9 9 0 0 0-8.862 12.872M12.75 3.031a9 9 0 0 1 6.69 14.036m0 0-.177-.529A2.25 2.25 0 0 0 17.128 15H16.5l-.324-.324a1.453 1.453 0 0 0-2.328.377l-.036.073a1.586 1.586 0 0 1-.982.816l-.99.282c-.55.157-.894.702-.8 1.267l.073.438c.08.474.49.821.97.821.846 0 1.598.542 1.865 1.345l.215.643m5.276-3.67a9.012 9.012 0 0 1-5.276 3.67m0 0a9 9 0 0 1-10.275-4.835M15.75 9c0 .896-.393 1.7-1.016 2.25" />
+                </svg>
+                <span focusable="false">GEOBUSTERS</span>
+            </div>
+            <button id="burger" aria-label="toggle mobile menu" class=" col-start-4 col-end-5">≡</button>
+            <nav id="burger-menu" class="col-span-full m-col-start-3 m-col-end-13">
+                <h2 class="hidden">Main Navigation</h2>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Learn</a></li>
+                    <li><a href="#">Quizzes</a></li>
+                    <li><a href="#">Games</a></li>
+                    <li><a href="#">Contacts</a></li>
+                </ul>                
+            </nav>
+        </div>
     </header>
 
-    <input type="hidden" value="<?php errorCountReset($errors); ?>">
+    <div id="error-input" hidden><?php errorCountReset($errors); ?></div>
 
-    <p id="notification" class="error">
-        <?php
-            errorCountReset($warning);
-        ?>
-    </p>
-    
-    <form action="includes/scripts/process_survey.php" method="POST">
-        <fieldset>
-            <legend>Tell us about yourself</legend>
-            <div>
+    <dialog id="notification" class="error" role="alert" aria-hidden="true" tabindex="1"><?php errorCountReset($warning);?></dialog>
+
+    <form id="survey-form" action="includes/scripts/process_survey.php" method="POST">
+        <fieldset class="grid-con" id="step1">
+            <legend class="col-span-full">Tell us about yourself</legend>
+            <p class="col-span-full">(*) are required</p>
+
+            <div class="col-start-1 col-end-4 m-col-start-1 m-col-end-6">
                 <label for="fname" class="<?php errorStyle($errors, "fname")?>">First Name*</label>
                 <input id="fname" name="fname" type="text" autocomplete="on">
             </div>
-            <div>
+            <div class="col-start-2 col-end-5 m-col-start-6 m-col-end-11">
                 <label for="lname" class="<?php errorStyle($errors, "lname")?>">Last Name*</label>
                 <input id="lname" name="lname" type="text" autocomplete="on">
             </div>
-            <div>
+            <div class="col-start-1 col-end-4 m-col-start-3 m-col-end-5">
                 <label for="age" class="<?php errorStyle($errors, "age")?>">Age</label>
-                <input id="age" name="age" type="number">
+                <input id="age" name="age" type="number" min="0" max="123">
             </div> 
-            <div>
+            <div class="col-start-2 col-end-5 m-col-start-5 m-col-end-12">
                 <label for="email" class="<?php errorStyle($errors, "email")?>">Email Address*</label>
                 <input id="email" name="email" type="email" autocomplete="on" placeholder="name@email.com">
             </div> 
-            <div>
+            <div class="col-start-1 col-end-4 m-col-start-1 m-col-end-6">
                 <label for="city" class="<?php errorStyle($errors, "city")?>">Current City*</label>
                 <input id="city" name="city" type="text" autocomplete="on">
             </div>          
-            <div>
+            <div class="col-start-2 col-end-5 m-col-start-6 m-col-end-11">
                 <label for="cstate" class="<?php errorStyle($errors, "cstate")?>">Current State/Country*</label>
                 <input id="cstate" name="cstate" type="text" autocomplete="on">
             </div>         
-            <div>
+            <div class="col-start-1 col-end-4 m-col-start-2 m-col-end-7">
                 <label for="bstate" class="<?php errorStyle($errors, "bstate")?>">Country of Origin*</label>
                 <input id="bstate" name="bstate" type="text" autocomplete="on">
             </div>     
-            <div>
+            <div class="col-start-2 col-end-5 m-col-start-7 m-col-end-12">
                 <label for="fstate" class="<?php errorStyle($errors, "fstate")?>">Your favorite country (other than your own)</label>
                 <input id="fstate" name="fstate" type="text" autocomplete="on">
             </div>     
-            <div>
-                <p>(*) are required</p>
-            </div>
         </fieldset>
 
-        <fieldset class="<?php errorStyle($errors, "asia")?>">
-            <legend>Which ones of these Asian countries do you view the most favorably?</legend>
+        <fieldset id="step2" class="grid-con <?php errorStyle($errors, "asia")?>">
+            <legend class="col-span-full">Which ones of these Asian countries do you view the most favorably?</legend>
             <div>
                 <input id="afg" name="asia[]" type="checkbox" value="Afghanistan">
                 <label for="afg">Afghanistan</label>
@@ -123,8 +140,8 @@ $_SESSION['warning'] = [];
             </div>
         </fieldset>
 
-        <fieldset class="<?php errorStyle($errors, "africa")?>">
-            <legend>Which ones of these African countries do you view the most favorably?</legend>
+        <fieldset id="step3" class="grid-con <?php errorStyle($errors, "africa")?>">
+            <legend class="col-span-full">Which ones of these African countries do you view the most favorably?</legend>
             <div>
                 <input id="alg" name="africa[]" type="checkbox" value="Alegria">
                 <label for="alg">Algeria</label>
@@ -159,8 +176,8 @@ $_SESSION['warning'] = [];
             </div>
         </fieldset>
 
-        <fieldset class="<?php errorStyle($errors, "europe")?>">
-            <legend >Which ones of these European countries do you view the most favorably?</legend>
+        <fieldset id="step4" class="grid-con <?php errorStyle($errors, "europe")?>">
+            <legend class="col-span-full">Which ones of these European countries do you view the most favorably?</legend>
             <div>
                 <input id="bri" name="europe[]" type="checkbox" value="United Kingdom">
                 <label for="bri">United Kingdom</label>
@@ -203,8 +220,8 @@ $_SESSION['warning'] = [];
             </div>
         </fieldset>
 
-        <fieldset class="<?php errorStyle($errors, "cont")?>">
-            <legend>Which continent are you living in right now?</legend>
+        <fieldset id="step5" class="grid-con <?php errorStyle($errors, "cont")?>">
+            <legend class="col-span-full">Which continent are you living in right now?</legend>
             <div>
                 <input id="asia" name="cont" type="radio" value="Asia">
                 <label for="asia">Asia</label>                
@@ -235,8 +252,8 @@ $_SESSION['warning'] = [];
             </div>
         </fieldset>
 
-        <fieldset class="<?php errorStyle($errors, "gov")?>">
-            <legend >What government system is your country under?</legend>
+        <fieldset id="step6" class="grid-con <?php errorStyle($errors, "gov")?>">
+            <legend class="col-span-full">What government system is your country under?</legend>
             <div>
                 <input id="pres" name="gov" type="radio" value="Presidental Republic">
                 <label for="pres">Presidental Republic</label>                
@@ -271,8 +288,8 @@ $_SESSION['warning'] = [];
             </div>
         </fieldset>
 
-        <fieldset class="<?php errorStyle($errors, "view")?>">
-            <legend>Do you view your own country favorably?</legend>
+        <fieldset id="step7" class="grid-con <?php errorStyle($errors, "view")?>">
+            <legend class="col-span-full">Do you view your own country favorably?*</legend>
             <div>
                 <input id="yview" name="view" type="radio" value="yes">
                 <label for="yview">Yes</label>                
@@ -287,8 +304,8 @@ $_SESSION['warning'] = [];
             </div>
         </fieldset>
 
-        <fieldset class="<?php errorStyle($errors, "strive")?>">
-            <legend >Do you think your country should strive to be economically developed?</legend>
+        <fieldset id="step8" class="grid-con <?php errorStyle($errors, "strive")?>">
+            <legend class="col-span-full">Do you think your country should strive to be economically developed?*</legend>
             <div>
                 <input id="ystrive" name="strive" type="radio" value="yes">
                 <label for="ystrive">Yes</label>                
@@ -303,33 +320,44 @@ $_SESSION['warning'] = [];
             </div>
         </fieldset>
 
-        <fieldset>
-            <legend>Let us know your opinions</legend>
-            <div>
+        <fieldset id="step9" class="grid-con">
+            <legend class="col-span-full">Let us know your opinions</legend>
+            <div class="col-span-full m-col-start-1 m-col-end-9">
                 <label for="life">Can you share about the current life condition of citizens from your nation?</label>
                 <textarea id="life" name="life" maxlength="850" placeholder="Write more here..." class="<?php errorStyle($errors, "life")?>"></textarea>
             </div>
-            <div>
+            <div class="col-span-full m-col-start-5 m-col-end-13">
                 <label for="eco">Do you think that a more developed economy guarantees better life condition? Why?</label>
                 <textarea id="eco" name="eco" maxlength="850" placeholder="Write more here..." class="<?php errorStyle($errors, "eco")?>"></textarea>
             </div>
         </fieldset>
         
-        <fieldset>
-            <legend>Trivias</legend>
-            <div>
-                <label for="govdate">When was your country's modern government established?</label>
-                <input id="govdate" name="govdate" type="date" class="<?php errorStyle($errors, "govdate")?>">
+        <fieldset id="step10" class="grid-con">
+            <legend class="col-span-full">Trivias</legend>
+            <div class="col-span-full subgrid-con">
+                <label for="govdate" class="col-span-2 m-col-span-6">When was your country's modern government established?</label>
+                <input id="govdate" name="govdate" type="date" class="col-span-2 m-col-start-1 m-col-end-7 <?php errorStyle($errors, "govdate")?>">
             </div>
-            <div>
-                <label for="col">If you paint a world map, what would be the color of favorite country? It may or may not be your own, nor it has to be the dominant flag color.</label>
-                <input id="col" name="col" type="color" value="#888888" class="<?php errorStyle($errors, "govdate")?>">
+            <div class="col-span-full subgrid-con">
+                <label for="col" class="col-span-2 m-col-start-4 m-col-end-8">If you paint a world map, what would be the color of favorite country? It may or may not be your own, nor it has to be the dominant flag color.</label>
+                <input id="col" name="col" type="color" value="#888888" class="m-col-span-3 <?php errorStyle($errors, "govdate")?>">
             </div>
         </fieldset>
 
-        <button type="submit">Send</button>
+        <div class="grid-con">
+            <button type="submit" class="col-start-2 col-end-4 m-col-start-4 m-col-end-7">Submit</button>
+        </div>
+        
     </form>
 
-    <script src="main.js"></script>
+    <footer id="main-footer">
+        <h2 class="hidden">Main Footer</h2>
+        <p>©2026 GEOBUSTERS, gmbh</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script type="text/javascript" src="/jake_russell_php_survey/main.js"></script>
 </body>
 </html>
