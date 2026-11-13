@@ -90,8 +90,7 @@ forEach ($names as $field) {
         $errors[$field] = 'This field only accepts all letter strings.';
         $warning[] = "Please enter a valid name without numbers or special characters";
     } else if(strlen($string) > 70) {
-        $errors[$field] = '"'.$field.'" is off character limits.';
-        $warning[] = "Your input is too long.";        
+        $errors[$field] = '"'.$field.'" is off character limits.';     
     }
 }
 
