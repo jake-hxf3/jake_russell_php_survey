@@ -37,7 +37,7 @@ $_SESSION['warning'] = [];
                 GEOBUSTERS
             </div>
             <button id="burger" aria-label="toggle mobile menu" class=" col-start-4 col-end-5">≡</button>
-            <nav class="col-span-full m-col-start-3 m-col-end-13">
+            <nav id="burger-menu" class="col-span-full m-col-start-3 m-col-end-13">
                 <h2 class="hidden">Main Navigation</h2>
                 <ul>
                     <li><a href="#">Home</a></li>
@@ -50,9 +50,9 @@ $_SESSION['warning'] = [];
         </div>
     </header>
 
-    <input type="hidden" value="<?php errorCountReset($errors); ?>">
+    <input aria-hidden="true" type="hidden" value="<?php errorCountReset($errors); ?>">
 
-    <p id="notification" class="error">
+    <p id="notification" class="error" aria-hidden="true">
         <?php
             errorCountReset($warning);
         ?>
