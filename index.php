@@ -33,10 +33,10 @@ $_SESSION['warning'] = [];
         </section>
 
         <div id="header-nav" class="grid-con">
-            <div id="main-logo" class="col-span-1">
+            <div id="main-logo" class="col-span-1 m-col-span-2">
                 GEOBUSTERS
             </div>
-            <nav class="col-span-full m-col-start-2 m-col-end-13">
+            <nav class="col-span-full m-col-start-3 m-col-end-13">
                 <h2 class="hidden">Main Navigation</h2>
                 <ul>
                     <li><a href="#">Home</a></li>
@@ -58,45 +58,45 @@ $_SESSION['warning'] = [];
     </p>
     
     <form id="survey-form" action="includes/scripts/process_survey.php" method="POST">
-        <fieldset id="step1">
-            <legend>Tell us about yourself</legend>
-            <p>(*) are required</p>
-            <div>
+        <fieldset class="grid-con" id="step1">
+            <legend class="col-span-full">Tell us about yourself</legend>
+            <p class="col-span-full">(*) are required</p>
+            <div class="col-start-1 col-end-4 m-col-start-1 m-col-end-6">
                 <label for="fname" class="<?php errorStyle($errors, "fname")?>">First Name*</label>
                 <input id="fname" name="fname" type="text" autocomplete="on">
             </div>
-            <div>
+            <div class="col-start-2 col-end-5 m-col-start-6 m-col-end-11">
                 <label for="lname" class="<?php errorStyle($errors, "lname")?>">Last Name*</label>
                 <input id="lname" name="lname" type="text" autocomplete="on">
             </div>
-            <div>
+            <div class="col-start-1 col-end-4 m-col-start-3 m-col-end-5">
                 <label for="age" class="<?php errorStyle($errors, "age")?>">Age</label>
                 <input id="age" name="age" type="number">
             </div> 
-            <div>
+            <div class="col-start-2 col-end-5 m-col-start-5 m-col-end-12">
                 <label for="email" class="<?php errorStyle($errors, "email")?>">Email Address*</label>
                 <input id="email" name="email" type="email" autocomplete="on" placeholder="name@email.com">
             </div> 
-            <div>
+            <div class="col-start-1 col-end-4 m-col-start-1 m-col-end-6">
                 <label for="city" class="<?php errorStyle($errors, "city")?>">Current City*</label>
                 <input id="city" name="city" type="text" autocomplete="on">
             </div>          
-            <div>
+            <div class="col-start-2 col-end-5 m-col-start-6 m-col-end-11">
                 <label for="cstate" class="<?php errorStyle($errors, "cstate")?>">Current State/Country*</label>
                 <input id="cstate" name="cstate" type="text" autocomplete="on">
             </div>         
-            <div>
+            <div class="col-start-1 col-end-4 m-col-start-2 m-col-end-7">
                 <label for="bstate" class="<?php errorStyle($errors, "bstate")?>">Country of Origin*</label>
                 <input id="bstate" name="bstate" type="text" autocomplete="on">
             </div>     
-            <div>
+            <div class="col-start-2 col-end-5 m-col-start-7 m-col-end-12">
                 <label for="fstate" class="<?php errorStyle($errors, "fstate")?>">Your favorite country (other than your own)</label>
                 <input id="fstate" name="fstate" type="text" autocomplete="on">
             </div>     
         </fieldset>
 
-        <fieldset id="step2" class="<?php errorStyle($errors, "asia")?>">
-            <legend>Which ones of these Asian countries do you view the most favorably?</legend>
+        <fieldset id="step2" class="grid-con <?php errorStyle($errors, "asia")?>">
+            <legend class="col-span-full">Which ones of these Asian countries do you view the most favorably?</legend>
             <div>
                 <input id="afg" name="asia[]" type="checkbox" value="Afghanistan">
                 <label for="afg">Afghanistan</label>
@@ -139,8 +139,8 @@ $_SESSION['warning'] = [];
             </div>
         </fieldset>
 
-        <fieldset id="step3" class="<?php errorStyle($errors, "africa")?>">
-            <legend>Which ones of these African countries do you view the most favorably?</legend>
+        <fieldset id="step3" class="grid-con <?php errorStyle($errors, "africa")?>">
+            <legend class="col-span-full">Which ones of these African countries do you view the most favorably?</legend>
             <div>
                 <input id="alg" name="africa[]" type="checkbox" value="Alegria">
                 <label for="alg">Algeria</label>
@@ -175,8 +175,8 @@ $_SESSION['warning'] = [];
             </div>
         </fieldset>
 
-        <fieldset id="step4" class="<?php errorStyle($errors, "europe")?>">
-            <legend >Which ones of these European countries do you view the most favorably?</legend>
+        <fieldset id="step4" class="grid-con <?php errorStyle($errors, "europe")?>">
+            <legend class="col-span-full">Which ones of these European countries do you view the most favorably?</legend>
             <div>
                 <input id="bri" name="europe[]" type="checkbox" value="United Kingdom">
                 <label for="bri">United Kingdom</label>
@@ -219,8 +219,8 @@ $_SESSION['warning'] = [];
             </div>
         </fieldset>
 
-        <fieldset id="step5" class="<?php errorStyle($errors, "cont")?>">
-            <legend>Which continent are you living in right now?</legend>
+        <fieldset id="step5" class="grid-con <?php errorStyle($errors, "cont")?>">
+            <legend class="col-span-full">Which continent are you living in right now?</legend>
             <div>
                 <input id="asia" name="cont" type="radio" value="Asia">
                 <label for="asia">Asia</label>                
@@ -251,8 +251,8 @@ $_SESSION['warning'] = [];
             </div>
         </fieldset>
 
-        <fieldset id="step6" class="<?php errorStyle($errors, "gov")?>">
-            <legend >What government system is your country under?</legend>
+        <fieldset id="step6" class="grid-con <?php errorStyle($errors, "gov")?>">
+            <legend class="col-span-full">What government system is your country under?</legend>
             <div>
                 <input id="pres" name="gov" type="radio" value="Presidental Republic">
                 <label for="pres">Presidental Republic</label>                
@@ -287,8 +287,8 @@ $_SESSION['warning'] = [];
             </div>
         </fieldset>
 
-        <fieldset id="step7" class="<?php errorStyle($errors, "view")?>">
-            <legend>Do you view your own country favorably?</legend>
+        <fieldset id="step7" class="grid-con <?php errorStyle($errors, "view")?>">
+            <legend class="col-span-full">Do you view your own country favorably?</legend>
             <div>
                 <input id="yview" name="view" type="radio" value="yes">
                 <label for="yview">Yes</label>                
@@ -303,8 +303,8 @@ $_SESSION['warning'] = [];
             </div>
         </fieldset>
 
-        <fieldset id="step8" class="<?php errorStyle($errors, "strive")?>">
-            <legend >Do you think your country should strive to be economically developed?</legend>
+        <fieldset id="step8" class="grid-con <?php errorStyle($errors, "strive")?>">
+            <legend class="col-span-full">Do you think your country should strive to be economically developed?</legend>
             <div>
                 <input id="ystrive" name="strive" type="radio" value="yes">
                 <label for="ystrive">Yes</label>                
@@ -319,31 +319,34 @@ $_SESSION['warning'] = [];
             </div>
         </fieldset>
 
-        <fieldset id="step9">
-            <legend>Let us know your opinions</legend>
-            <div>
+        <fieldset id="step9" class="grid-con">
+            <legend class="col-span-full">Let us know your opinions</legend>
+            <div class="col-span-full m-col-start-1 m-col-end-9">
                 <label for="life">Can you share about the current life condition of citizens from your nation?</label>
                 <textarea id="life" name="life" maxlength="850" placeholder="Write more here..." class="<?php errorStyle($errors, "life")?>"></textarea>
             </div>
-            <div>
+            <div class="col-span-full m-col-start-5 m-col-end-13">
                 <label for="eco">Do you think that a more developed economy guarantees better life condition? Why?</label>
                 <textarea id="eco" name="eco" maxlength="850" placeholder="Write more here..." class="<?php errorStyle($errors, "eco")?>"></textarea>
             </div>
         </fieldset>
         
-        <fieldset id="step10">
-            <legend>Trivias</legend>
-            <div>
-                <label for="govdate">When was your country's modern government established?</label>
-                <input id="govdate" name="govdate" type="date" class="<?php errorStyle($errors, "govdate")?>">
+        <fieldset id="step10" class="grid-con">
+            <legend class="col-span-full">Trivias</legend>
+            <div class="col-span-full subgrid-con">
+                <label for="govdate" class="col-span-2 m-col-span-6">When was your country's modern government established?</label>
+                <input id="govdate" name="govdate" type="date" class="col-span-2 m-col-start-1 m-col-end-7 <?php errorStyle($errors, "govdate")?>">
             </div>
-            <div>
-                <label for="col">If you paint a world map, what would be the color of favorite country? It may or may not be your own, nor it has to be the dominant flag color.</label>
-                <input id="col" name="col" type="color" value="#888888" class="<?php errorStyle($errors, "govdate")?>">
+            <div class="col-span-full subgrid-con">
+                <label for="col" class="col-span-2 m-col-start-4 m-col-end-8">If you paint a world map, what would be the color of favorite country? It may or may not be your own, nor it has to be the dominant flag color.</label>
+                <input id="col" name="col" type="color" value="#888888" class="m-col-span-3 <?php errorStyle($errors, "govdate")?>">
             </div>
         </fieldset>
 
-        <button type="submit">Send</button>
+        <div class="grid-con">
+            <button type="submit" class="col-span-full m-col-start-4 m-col-end-7">Submit</button>
+        </div>
+        
     </form>
 
     <footer id="main-footer">
