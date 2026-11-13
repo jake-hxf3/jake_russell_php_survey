@@ -9,16 +9,30 @@
     const notif = document.querySelector("#notification");
     const inputs = document.querySelectorAll("input");
 
+    const tl = gsap.timeline();
+    const fadeIn1 = {
+            duration: 0.5,
+            autoAlpha: 0,
+            ease: "power1.out",
+            y: "-3vh",
+        };
+
+    const fadeIn2 = {
+        duration: 0.5,
+        autoAlpha: 0,
+        ease: "power1.out",
+        y: "-5vh",
+    };
+
+
+    tl.from("#main-header", fadeIn2).from("#hero", fadeIn1);
+
+
+
 
     function toggleMobileMenu() {
         burger.classList.toggle("clicked");
-
-        gsap.from("#burger-menu", {
-            duration: 0.5,
-            autoAlpha: 0,
-            ease: "power4.out",
-            y: "-3vh",
-        })
+        gsap.from("#burger-menu", fadeIn1);
     }
 
     let errorMsg = errorInp.textContent;
