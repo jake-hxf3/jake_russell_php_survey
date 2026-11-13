@@ -35,7 +35,7 @@ $names = ["fname", "lname", "city", "cstate", "bstate", "fstate"];
 
 // acceptable continent field names for the arrays to be copied and checked later
 $contArrays = ['asia', 'africa', 'europe'];
-// this is an array of arrays, its keys being the countries arrays copied from $formInput
+// this is an array of arrays to be used in emails, its keys being the countries arrays copied from $formInput
 $inpArray = array_fill_keys($contArrays, '');
 
 
@@ -112,13 +112,12 @@ if(!empty($formInput['age'])){
 }
 
 // loop through the continents' names as the keys
-forEach($contArrays as $field) {
-    // for each key, copy their respective countries from the field whose name is that key 
+forEach($countries as $field => $list) {
     // add them into a sub-array of $inpArray by the respective continent key
     $inpArray[$field] = $formInput[$field] ?? [];
     // then loop through this sub-array and check if a country name belongs to the available sublist of countries by this key
     forEach($inpArray[$field] as $country) {
-        if(!in_array($country, $countries[$field])) {
+        if(!in_array($country, $list)) {
             // log an error if the country name is not found in the sublist
             $errors[$field] = '"'.$country.'" is not in the available list.';            
         }
