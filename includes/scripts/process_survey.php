@@ -101,7 +101,7 @@ if (!filter_var($formInput['email'], FILTER_VALIDATE_EMAIL)){
 // ctype_digit() checks if the string is all numerical digits
 if(!empty($formInput['age'])){
     if(!ctype_digit($formInput['age'])) {
-        $errors['age'] = '"age" must be a number.';
+        $errors['age'] = '"age" must be a natural number.';
     }
 }
 

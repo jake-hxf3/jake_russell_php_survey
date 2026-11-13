@@ -52,12 +52,13 @@ $_SESSION['warning'] = [];
 
     <div id="error-input" hidden><?php errorCountReset($errors); ?></div>
 
-    <p id="notification" class="error" aria-hidden="true"><?php errorCountReset($warning);?></p>
-    
+    <dialog id="notification" class="error" role="alert" aria-hidden="true" tabindex="1"><?php errorCountReset($warning);?></dialog>
+
     <form id="survey-form" action="includes/scripts/process_survey.php" method="POST">
         <fieldset class="grid-con" id="step1">
             <legend class="col-span-full">Tell us about yourself</legend>
             <p class="col-span-full">(*) are required</p>
+
             <div class="col-start-1 col-end-4 m-col-start-1 m-col-end-6">
                 <label for="fname" class="<?php errorStyle($errors, "fname")?>">First Name*</label>
                 <input id="fname" name="fname" type="text" autocomplete="on">
@@ -68,7 +69,7 @@ $_SESSION['warning'] = [];
             </div>
             <div class="col-start-1 col-end-4 m-col-start-3 m-col-end-5">
                 <label for="age" class="<?php errorStyle($errors, "age")?>">Age</label>
-                <input id="age" name="age" type="number">
+                <input id="age" name="age" type="number" min="0" max="123">
             </div> 
             <div class="col-start-2 col-end-5 m-col-start-5 m-col-end-12">
                 <label for="email" class="<?php errorStyle($errors, "email")?>">Email Address*</label>
@@ -285,7 +286,7 @@ $_SESSION['warning'] = [];
         </fieldset>
 
         <fieldset id="step7" class="grid-con <?php errorStyle($errors, "view")?>">
-            <legend class="col-span-full">Do you view your own country favorably?</legend>
+            <legend class="col-span-full">Do you view your own country favorably?*</legend>
             <div>
                 <input id="yview" name="view" type="radio" value="yes">
                 <label for="yview">Yes</label>                
@@ -301,7 +302,7 @@ $_SESSION['warning'] = [];
         </fieldset>
 
         <fieldset id="step8" class="grid-con <?php errorStyle($errors, "strive")?>">
-            <legend class="col-span-full">Do you think your country should strive to be economically developed?</legend>
+            <legend class="col-span-full">Do you think your country should strive to be economically developed?*</legend>
             <div>
                 <input id="ystrive" name="strive" type="radio" value="yes">
                 <label for="ystrive">Yes</label>                
