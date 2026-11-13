@@ -29,15 +29,15 @@ $_SESSION['warning'] = [];
 <body>
     <header>
         <section id="hero" class="grid-con">
-
             <h1 class="col-span-full">Welcome to the GeoBusters Survey</h1>            
+            <img src="images/geo-map.jpg" class="col-span-full" alt="">
         </section>
 
         <div id="header-nav" class="grid-con">
             <div id="main-logo" class="col-span-1">
                 GEOBUSTERS
             </div>
-            <nav class="col-span-full m-col-start-8 m-col-end-13">
+            <nav class="col-span-full m-col-start-2 m-col-end-13">
                 <h2 class="hidden">Main Navigation</h2>
                 <ul>
                     <li><a href="#">Home</a></li>
