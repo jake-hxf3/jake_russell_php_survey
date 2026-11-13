@@ -7,6 +7,7 @@
     const burger = document.querySelector("#burger");
     const errorInp = document.querySelector("#error-input");
     const notif = document.querySelector("#notification");
+    const inputs = document.querySelectorAll("input");
 
 
     function toggleMobileMenu() {
@@ -26,7 +27,20 @@
     function change_dialog() {
         notif.setAttribute("open", "true");
         notif.ariaHidden = "false";
-        errorReceived = true;
+    }
+
+    function turnErrorsOff(e) {
+        let input = e.target;
+        console.log(input.id);
+        // when focus on an input, its associated fieldset or label should remove the error styling class
+        let parent = input.closest(".error"); // fieldsets
+        if(parent) {
+            parent.classList.remove("error");
+        }
+        let sibling = input.previousElementSibling; // labels
+        if(sibling) {
+            sibling.classList.remove("error");
+        }    
     }
 
     // prints out an alert window if there's a not so innocent error
@@ -42,5 +56,8 @@
     }
 
     burger.addEventListener("click", toggleMobileMenu);
-
+    inputs.forEach((elem) => {
+        elem.addEventListener("focus", turnErrorsOff);
+        elem.addEventListener("input", turnErrorsOff);
+    })
 })();
