@@ -4,10 +4,13 @@ session_start();
 
 require_once __DIR__ . '/includes/helpers.php';
 
+// save these variables from the session once the process form is done
+// these variables will be used to display messages
 $errors = $_SESSION['form_errors'] ?? [];
 $warning = $_SESSION['warning'];
 $submittedInputs = $_SESSION['form_input'] ?? [];
 
+// free session variables afterwards
 $_SESSION['form_input'] = [];
 $_SESSION['form_errors'] = [];
 $_SESSION['warning'] = [];
