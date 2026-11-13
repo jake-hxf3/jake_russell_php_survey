@@ -50,13 +50,9 @@ $_SESSION['warning'] = [];
         </div>
     </header>
 
-    <input aria-hidden="true" type="hidden" value="<?php errorCountReset($errors); ?>">
+    <div id="error-input" hidden><?php errorCountReset($errors); ?></div>
 
-    <p id="notification" class="error" aria-hidden="true">
-        <?php
-            errorCountReset($warning);
-        ?>
-    </p>
+    <p id="notification" class="error" aria-hidden="true"><?php errorCountReset($warning);?></p>
     
     <form id="survey-form" action="includes/scripts/process_survey.php" method="POST">
         <fieldset class="grid-con" id="step1">
