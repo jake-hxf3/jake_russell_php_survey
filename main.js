@@ -8,7 +8,6 @@
     const errorInp = document.querySelector("#error-input");
     const notif = document.querySelector("#notification");
 
-    let errorReceived = false;
 
     function toggleMobileMenu() {
         burger.classList.toggle("clicked");
@@ -36,9 +35,10 @@
         console.log("Form error!");
         if(notifMsg) {
             change_dialog();
-            return;
+        } else {
+            window.alert(errorMsg);
         }
-        window.alert(errorMsg);
+        
     }
 
     burger.addEventListener("click", toggleMobileMenu);
