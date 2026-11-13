@@ -6,7 +6,7 @@ This project is about implementing a geography survey questionnaire using PHP fo
 ## Installation
 No installation required, simply download the zip file and extract.
 ## Usage
-Open index.html in your browser and decide if pass the quiz.
+Open index.html in your browser and decide if you pass the quiz.
 
 ## History
 TODO: Write history
