@@ -349,7 +349,7 @@ if($success) {
             </div>
             <div class="col-span-full subgrid-con">
                 <label for="col" class="col-span-2 m-col-start-4 m-col-end-8">If you paint a world map, what would be the color of your favorite country? It may or may not be your own, nor it has to be the dominant flag color.</label>
-                <input id="col" name="col" type="color" value="#888888" class="m-col-span-3 <?php errorStyle($errors, "govdate")?>">
+                <input id="col" name="col" type="color" class="m-col-span-3 <?php errorStyle($errors, "col")?>" value="#888888">
             </div>
         </fieldset>
 
