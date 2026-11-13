@@ -10,6 +10,8 @@
     const inputs = document.querySelectorAll("input");
 
     const tl = gsap.timeline();
+    const tl2 = gsap.timeline({paused: false});
+
     const fadeIn1 = {
             duration: 0.5,
             autoAlpha: 0,
@@ -26,7 +28,7 @@
 
 
     tl.from("#main-header", fadeIn2).from("#hero", fadeIn1);
-
+    tl2.from("#burger-menu", fadeIn1);
 
 
 
