@@ -83,6 +83,7 @@ forEach($required as $field) {
         $errors[$field] = '"'.$field.'" must exist.';
     } else if ($formInput[$field]==='') {
         $errors[$field] = '"'.$field.'" must not be blank.';
+        // warns the survey taker in a dialogue box
         $warning[] = "Please answer the required questions.";
     }
 }
