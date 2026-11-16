@@ -201,11 +201,11 @@ if($success) {
             </div>
             <div>
                 <input id="hun" name="europe[]" type="checkbox" value="Hungary">
-                <label for="bri">🇭🇺 Hungary</label>
+                <label for="hun">🇭🇺 Hungary</label>
             </div>
             <div>
                 <input id="pol" name="europe[]" type="checkbox" value="Poland">
-                <label for="bri">🇵🇱 Poland</label>
+                <label for="pol">🇵🇱 Poland</label>
             </div>
             <div>
                 <input id="spa" name="europe[]" type="checkbox" value="Spain">
@@ -217,11 +217,11 @@ if($success) {
             </div>
             <div>
                 <input id="ita" name="europe[]" type="checkbox" value="Italy">
-                <label for="bri">🏛️ Italy</label>
+                <label for="ita">🏛️ Italy</label>
             </div>
             <div>
                 <input id="rus" name="europe[]" type="checkbox" value="Russia">
-                <label for="bri">🇷🇺 Russia</label>
+                <label for="rus">🇷🇺 Russia</label>
             </div>
             <div>
                 <input id="ukr" name="europe[]" type="checkbox" value="Ukraine">
