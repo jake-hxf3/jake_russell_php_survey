@@ -63,8 +63,9 @@ body, p, h1, h2, h3, h4, h5 {
 
  .grid-con { 
    display: grid;
+   min-width: 150px;
    grid-template-columns: repeat(4, minmax(0, 1fr));
-   grid-column-gap: 30px;
+   grid-column-gap: min(5vw, 30px);
  }
 
  .subgrid-con {
